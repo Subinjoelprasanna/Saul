@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -8,105 +8,16 @@
   <style>
     :root {
       --bg: #f4f6fb;
-      --bg-gradient: linear-gradient(160deg, #edf2ff 0%, #f7f8fc 45%, #eef6f3 100%);
       --panel: #ffffff;
-      --sidebar: #fbfcff;
-      --topbar: #ffffff;
-      --composer: #ffffff;
-      --messages: #f9fbff;
-      --surface: #ffffff;
-      --surface-soft: #f7faff;
       --border: #d9dfeb;
       --text: #192235;
-      --text-white: #ffffff;
       --muted: #5f6c84;
       --primary: #0f62fe;
       --user: #e6f0ff;
-      --user-border: #c9dafc;
       --assistant: #ffffff;
       --warn: #8a4b00;
       --warn-bg: #fff4e6;
-      --warn-border: #ffd7ab;
       --danger: #b42318;
-      --shadow: rgba(16, 37, 68, 0.12);
-      --summary-bg: #ffffff;
-      --summary-value-bg: #f8fbff;
-      --summary-value-border: #e1e8f5;
-      --missing-text: #67511f;
-      --missing-bg: #fff7e8;
-      --missing-border: #ffe4b8;
-      --facts-text: #2a3346;
-      --ref-panel-bg: #fbfdff;
-      --input-bg: #ffffff;
-      --app-shadow: 0 14px 30px rgba(16, 37, 68, 0.12);
-    }
-
-    [data-theme="dark"] {
-      --bg: #0b0f1a;
-      --bg-gradient: linear-gradient(160deg, #0f1622 0%, #141f2f 48%, #182435 100%);
-      --panel: #131c2d;
-      --sidebar: #1a253a;
-      --topbar: #1a253a;
-      --composer: #131c2d;
-      --messages: #111a27;
-      --surface: #1a2536;
-      --surface-soft: #223149;
-      --border: #2b3a5a;
-      --text: #e1e7f0;
-      --text-white: #ffffff;
-      --muted: #8e9dbd;
-      --primary: #4d8dfa;
-      --user: #1e2d4d;
-      --user-border: #35527a;
-      --assistant: #1a253a;
-      --warn: #ffd08c;
-      --warn-bg: #2d1e00;
-      --warn-border: #6f5330;
-      --danger: #ff8f8a;
-      --shadow: rgba(0, 0, 0, 0.4);
-      --summary-bg: #1a2739;
-      --summary-value-bg: #1f3046;
-      --summary-value-border: #2e445f;
-      --missing-text: #ffd59d;
-      --missing-bg: #3b2e1c;
-      --missing-border: #6f5432;
-      --facts-text: #cbd7ea;
-      --ref-panel-bg: #1e2c40;
-      --input-bg: #101a29;
-      --app-shadow: 0 16px 36px rgba(2, 6, 12, 0.55);
-    }
-
-    [data-theme="navy"] {
-      --bg: #e4ebf7;
-      --bg-gradient: linear-gradient(160deg, #dde7f7 0%, #e8eef9 52%, #dce6f4 100%);
-      --panel: #f5f8ff;
-      --sidebar: #edf3fd;
-      --topbar: #f8fbff;
-      --composer: #f5f8ff;
-      --messages: #f2f6fd;
-      --surface: #fafdff;
-      --surface-soft: #eaf1fc;
-      --border: #c1d1e7;
-      --text: #20334d;
-      --muted: #617898;
-      --primary: #2d5fa8;
-      --user: #e2ecfb;
-      --user-border: #b9cbe8;
-      --assistant: #fbfdff;
-      --warn: #7d4f07;
-      --warn-bg: #fbf2de;
-      --warn-border: #e9d3a8;
-      --danger: #a5312a;
-      --summary-bg: #f8fbff;
-      --summary-value-bg: #eef4fc;
-      --summary-value-border: #d6e1f1;
-      --missing-text: #715624;
-      --missing-bg: #fff6e6;
-      --missing-border: #efd8b3;
-      --facts-text: #304866;
-      --ref-panel-bg: #f5f9ff;
-      --input-bg: #fdfefe;
-      --app-shadow: 0 14px 30px rgba(17, 42, 78, 0.16);
     }
 
     * {
@@ -117,12 +28,11 @@
       margin: 0;
       font-family: "Segoe UI", Tahoma, sans-serif;
       color: var(--text);
-      background: var(--bg-gradient);
+      background: linear-gradient(160deg, #edf2ff 0%, #f7f8fc 45%, #eef6f3 100%);
       min-height: 100vh;
       display: flex;
       justify-content: center;
       padding: 20px;
-      transition: background 0.3s, color 0.3s;
     }
 
     .app {
@@ -131,24 +41,22 @@
       height: calc(100vh - 40px);
       background: var(--panel);
       border: 1px solid var(--border);
-      box-shadow: var(--app-shadow);
+      border-radius: 16px;
+      box-shadow: 0 14px 30px rgba(16, 37, 68, 0.12);
       display: grid;
       grid-template-columns: 300px 1fr;
       overflow: hidden;
-      transition: background 0.3s, border-color 0.3s, box-shadow 0.3s;
     }
 
     .sidebar {
       border-right: 1px solid var(--border);
       padding: 18px;
-      background: var(--sidebar);
-      transition: background 0.3s, border-color 0.3s;
+      background: #fbfcff;
     }
 
     .brand {
       margin: 0 0 6px;
       font-size: 1.35rem;
-      color: var(--text);
     }
 
     .subtitle {
@@ -165,7 +73,6 @@
     .quick h3 {
       margin: 0 0 10px;
       font-size: 0.95rem;
-      color: var(--text);
     }
 
     .quick button {
@@ -175,23 +82,23 @@
       padding: 10px;
       border: 1px solid var(--border);
       border-radius: 10px;
-      background: var(--panel);
+      background: #fff;
       cursor: pointer;
       color: var(--text);
     }
 
     .quick button:hover {
-      border-color: var(--primary);
-      background: var(--bg);
+      border-color: #bac7e6;
+      background: #f7faff;
     }
 
     .disclaimer {
       margin-top: 18px;
       padding: 10px;
-      background: var(--bg);
+      background: #f7f9ff;
       border-radius: 10px;
       border: 1px solid var(--border);
-      color: var(--muted);
+      color: #475168;
       font-size: 0.84rem;
       line-height: 1.4;
     }
@@ -201,7 +108,7 @@
       padding: 12px;
       border: 1px solid var(--border);
       border-radius: 12px;
-      background: var(--summary-bg);
+      background: #ffffff;
     }
 
     .summary-panel h3 {
@@ -235,8 +142,8 @@
 
     .summary-value {
       color: var(--text);
-      background: var(--summary-value-bg);
-      border: 1px solid var(--summary-value-border);
+      background: #f8fbff;
+      border: 1px solid #e1e8f5;
       border-radius: 8px;
       padding: 7px 8px;
       min-height: 30px;
@@ -246,9 +153,9 @@
     .missing-fields {
       margin-top: 8px;
       font-size: 0.82rem;
-      color: var(--missing-text);
-      background: var(--missing-bg);
-      border: 1px solid var(--missing-border);
+      color: #67511f;
+      background: #fff7e8;
+      border: 1px solid #ffe4b8;
       border-radius: 8px;
       padding: 7px 8px;
       min-height: 34px;
@@ -259,48 +166,10 @@
       margin: 8px 0 0;
       padding-left: 16px;
       font-size: 0.82rem;
-      color: var(--facts-text);
+      color: #2a3346;
       max-height: 120px;
       overflow-y: auto;
       line-height: 1.3;
-    }
-
-    #chatHistoryList {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      max-height: 180px;
-      overflow-y: auto;
-    }
-
-    .history-empty {
-      color: var(--muted);
-      font-size: 0.82rem;
-      padding: 6px 2px;
-    }
-
-    .history-item {
-      margin-top: 0 !important;
-      width: 100%;
-      text-align: left;
-      padding: 8px 10px;
-      border: 1px solid var(--border);
-      border-radius: 9px;
-      background: var(--surface);
-      color: var(--text);
-      cursor: pointer;
-      font-size: 0.82rem;
-      line-height: 1.3;
-    }
-
-    .history-item:hover {
-      background: var(--surface-soft);
-    }
-
-    .history-item.active {
-      border-color: var(--primary);
-      box-shadow: inset 3px 0 0 0 var(--primary);
-      font-weight: 700;
     }
 
     .generate-btn {
@@ -325,8 +194,6 @@
       display: grid;
       grid-template-rows: auto 1fr auto;
       min-height: 0;
-      background: var(--panel);
-      transition: background 0.3s;
     }
 
     .topbar {
@@ -335,15 +202,13 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: var(--topbar);
-      transition: background 0.3s, border-color 0.3s;
+      background: #fff;
     }
 
     .topbar h2 {
       margin: 0;
       font-size: 1rem;
       font-weight: 700;
-      color: var(--text);
     }
 
     .status {
@@ -362,43 +227,12 @@
     .top-actions {
       display: flex;
       gap: 8px;
-      align-items: center;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
-
-    .theme-switch {
-      display: inline-flex;
-      gap: 6px;
-      margin-right: 6px;
-    }
-
-    .theme-btn {
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      background: var(--surface);
-      color: var(--text);
-      font-size: 0.78rem;
-      padding: 5px 10px;
-      cursor: pointer;
-      line-height: 1;
-    }
-
-    .theme-btn:hover {
-      background: var(--surface-soft);
-    }
-
-    .theme-btn.active {
-      background: var(--primary);
-      border-color: var(--primary);
-      color: #ffffff;
-      font-weight: 700;
     }
 
     .export-btn {
       border: 1px solid var(--border);
       border-radius: 8px;
-      background: var(--panel);
+      background: #fff;
       color: var(--text);
       padding: 6px 10px;
       font-size: 0.85rem;
@@ -406,15 +240,14 @@
     }
 
     .export-btn:hover {
-      border-color: var(--primary);
-      background: var(--bg);
+      border-color: #b9c5df;
+      background: #f7faff;
     }
 
     .messages {
       padding: 18px;
       overflow-y: auto;
-      background: var(--messages);
-      transition: background 0.3s;
+      background: #f9fbff;
     }
 
     .message {
@@ -425,14 +258,12 @@
       border: 1px solid var(--border);
       white-space: pre-wrap;
       line-height: 1.5;
-      color: var(--text);
-      transition: background 0.3s, border-color 0.3s, color 0.3s;
     }
 
     .message.user {
       margin-left: auto;
       background: var(--user);
-      border-color: var(--user-border);
+      border-color: #c9dafc;
     }
 
     .message.assistant {
@@ -441,7 +272,7 @@
 
     .message.notice {
       background: var(--warn-bg);
-      border-color: var(--warn-border);
+      border-color: #ffd7ab;
       color: var(--warn);
     }
 
@@ -458,13 +289,13 @@
 
     .ref-toggle {
       border: 1px solid var(--border);
-      background: var(--panel);
+      background: #fff;
       width: 22px;
       height: 22px;
       border-radius: 50%;
       font-size: 12px;
       line-height: 1;
-      color: var(--muted);
+      color: #4f5a70;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
@@ -473,7 +304,8 @@
     }
 
     .ref-toggle:hover {
-      border-color: var(--primary);
+      border-color: #b9c5df;
+      background: #f7faff;
     }
 
     .ref-panel {
@@ -482,9 +314,9 @@
       padding: 9px;
       border: 1px solid var(--border);
       border-radius: 8px;
-      background: var(--ref-panel-bg);
+      background: #fbfdff;
       font-size: 0.86rem;
-      color: var(--text);
+      color: #273149;
     }
 
     .ref-panel.open {
@@ -494,7 +326,7 @@
     .ref-heading {
       font-weight: 700;
       font-size: 0.82rem;
-      color: var(--muted);
+      color: #4f5a70;
       margin-bottom: 6px;
       text-transform: uppercase;
       letter-spacing: 0.02em;
@@ -509,8 +341,7 @@
     .composer {
       padding: 12px 14px;
       border-top: 1px solid var(--border);
-      background: var(--composer);
-      transition: background 0.3s, border-color 0.3s;
+      background: #fff;
     }
 
     .composer form {
@@ -535,8 +366,8 @@
       height: 40px;
       border-radius: 50%;
       border: 1px solid var(--border);
-      background: var(--panel);
-      color: var(--text);
+      background: #fff;
+      color: #2f3b52;
       font-size: 22px;
       line-height: 1;
       cursor: pointer;
@@ -547,7 +378,8 @@
     }
 
     .attach-btn:hover {
-      border-color: var(--primary);
+      border-color: #aebddd;
+      background: #f3f7ff;
     }
 
     .attach-status {
@@ -566,18 +398,6 @@
       border-radius: 10px;
       padding: 10px 12px;
       font: inherit;
-      background: var(--panel);
-      color: var(--text);
-      transition: background 0.3s, border-color 0.3s, color 0.3s;
-    }
-
-    textarea::placeholder {
-      color: var(--muted);
-    }
-
-    textarea:focus {
-      outline: none;
-      border-color: var(--primary);
     }
 
     .actions {
@@ -590,7 +410,7 @@
       border: 0;
       border-radius: 10px;
       background: var(--primary);
-      color: var(--text-white);
+      color: #fff;
       font-weight: 700;
       padding: 10px 16px;
       cursor: pointer;
@@ -599,7 +419,7 @@
     button.clear {
       border: 1px solid var(--border);
       border-radius: 10px;
-      background: var(--panel);
+      background: #fff;
       color: var(--text);
       padding: 9px 12px;
       cursor: pointer;
@@ -640,31 +460,6 @@
         grid-column: 1 / -1;
         flex-direction: row;
       }
-    }
-
-    /* Theme Toggle Button */
-    .theme-toggle {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: var(--primary);
-      color: var(--text-white);
-      border: none;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 20px;
-      z-index: 1000;
-      transition: transform 0.2s;
-    }
-
-    .theme-toggle:hover {
-      transform: scale(1.1);
     }
   </style>
 </head>
@@ -708,12 +503,10 @@
         </div>
         <div id="missingFields" class="missing-fields">Missing fields will appear here when intake begins.</div>
         <ul id="factsList" class="facts-list"></ul>
-        <button id="generateReportBtn" class="generate-btn" type="button" onclick="generateReportNow()"
-          disabled>Generate Report</button>
+        <button id="generateReportBtn" class="generate-btn" type="button" onclick="generateReportNow()" disabled>Generate Report</button>
       </div>
 
-      <div id="disclaimer" class="disclaimer">SaulGPT provides legal information only, not legal advice. Consult a
-        qualified lawyer for case-specific action.</div>
+      <div id="disclaimer" class="disclaimer">SaulGPT provides legal information only, not legal advice. Consult a qualified lawyer for case-specific action.</div>
 
     </aside>
 
@@ -722,11 +515,6 @@
         <h2>Legal Chat</h2>
         <div class="top-meta">
           <div class="top-actions">
-            <div class="theme-switch" role="group" aria-label="Theme mode">
-              <button id="themeLightBtn" class="theme-btn" type="button" onclick="setTheme('light')">Light</button>
-              <button id="themeDarkBtn" class="theme-btn" type="button" onclick="setTheme('dark')">Dark</button>
-              <button id="themeNavyBtn" class="theme-btn" type="button" onclick="setTheme('navy')">Navy</button>
-            </div>
             <button class="export-btn" type="button" onclick="exportLatestReport('pdf')">Export PDF</button>
             <button class="export-btn" type="button" onclick="exportLatestReport('docx')">Export DOCX</button>
             <button class="export-btn" type="button" onclick="exportLatestReport('txt')">Export TXT</button>
@@ -755,7 +543,6 @@
         <div id="error" class="error"></div>
       </div>
     </main>
-    <button id="themeToggle" class="theme-toggle" onclick="toggleTheme()" title="Toggle Theme">🌓</button>
   </div>
 
   <script>
@@ -788,81 +575,9 @@
     }
 
     const API_BASE_CANDIDATES = getApiBaseCandidates();
-    const CHAT_STORAGE_KEY = "saulgpt_chats";
-    const THEME_STORAGE_KEY = "saulgpt_theme";
-    const LEGACY_CHAT_KEYS = ["saulgpt_chat_history", "saulgpt_history"];
-    const WELCOME_MESSAGE = "Share your legal issue. I will identify the likely category, explain the general legal context, and suggest high-level next steps.";
-
-    function readStorageJson(key) {
-      try {
-        const raw = localStorage.getItem(key);
-        if (!raw) return null;
-        return JSON.parse(raw);
-      } catch (_) {
-        localStorage.removeItem(key);
-        return null;
-      }
-    }
-
-    function normalizeTurn(raw) {
-      if (!raw || typeof raw !== "object") return null;
-      if (raw.role !== "user" && raw.role !== "assistant") return null;
-      const content = String(raw.content || "").trim();
-      if (!content) return null;
-      return { role: raw.role, content };
-    }
-
-    function normalizeChatRecord(raw) {
-      if (!raw || typeof raw !== "object") return null;
-      const historyRows = Array.isArray(raw.history) ? raw.history.map(normalizeTurn).filter(Boolean) : [];
-      return {
-        id: typeof raw.id === "string" && raw.id.trim() ? raw.id : generateChatId(),
-        title: typeof raw.title === "string" && raw.title.trim() ? raw.title.trim() : "New Chat",
-        history: historyRows,
-        messagesHtml: typeof raw.messagesHtml === "string" ? raw.messagesHtml : "",
-        timestamp: Number(raw.timestamp) || Date.now(),
-        caseWorkflow: raw.caseWorkflow && typeof raw.caseWorkflow === "object" ? raw.caseWorkflow : null,
-        lastAssistantReply: typeof raw.lastAssistantReply === "string" ? raw.lastAssistantReply : "",
-        latestReportText: typeof raw.latestReportText === "string" ? raw.latestReportText : "",
-      };
-    }
-
-    function loadSavedChats() {
-      let rows = readStorageJson(CHAT_STORAGE_KEY);
-      if (!Array.isArray(rows)) {
-        for (const legacyKey of LEGACY_CHAT_KEYS) {
-          const legacyRows = readStorageJson(legacyKey);
-          if (Array.isArray(legacyRows)) {
-            rows = legacyRows;
-            localStorage.setItem(CHAT_STORAGE_KEY, JSON.stringify(legacyRows));
-            break;
-          }
-        }
-      }
-      if (!Array.isArray(rows)) return [];
-      return rows
-        .map(normalizeChatRecord)
-        .filter(Boolean)
-        .sort((a, b) => b.timestamp - a.timestamp);
-    }
-
     let history = [];
-    let savedChats = loadSavedChats();
+    let savedChats = JSON.parse(localStorage.getItem('saulgpt_chats')) || [];
     let currentChatId = null;
-    let isDark = localStorage.getItem('saulgpt_theme') === 'dark';
-
-    function applyTheme() {
-      document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
-      const toggleBtn = document.getElementById('themeToggle');
-      if (toggleBtn) toggleBtn.textContent = isDark ? '☀️' : '🌓';
-    }
-
-    function toggleTheme() {
-      isDark = !isDark;
-      localStorage.setItem('saulgpt_theme', isDark ? 'dark' : 'light');
-      applyTheme();
-    }
-    applyTheme();
 
     const messagesEl = document.getElementById("messages");
     const inputEl = document.getElementById("input");
@@ -881,9 +596,6 @@
     const missingFieldsEl = document.getElementById("missingFields");
     const factsListEl = document.getElementById("factsList");
     const generateReportBtnEl = document.getElementById("generateReportBtn");
-    const themeLightBtn = document.getElementById("themeLightBtn");
-    const themeDarkBtn = document.getElementById("themeDarkBtn");
-    const themeNavyBtn = document.getElementById("themeNavyBtn");
 
     let lastAssistantReply = "";
     let latestReportText = "";
@@ -1034,51 +746,6 @@
       generateReportBtnEl.disabled = !(workflow.ready_for_report && !workflow.report_generated);
     }
 
-    function persistSavedChats() {
-      try {
-        localStorage.setItem(CHAT_STORAGE_KEY, JSON.stringify(savedChats));
-      } catch (_) {
-        // Ignore persistence errors (private mode/quota); app remains usable.
-      }
-    }
-
-    function buildChatTitle(items) {
-      const firstUser = items.find((turn) => turn.role === "user" && String(turn.content || "").trim());
-      if (!firstUser) return "New Chat";
-      const trimmed = String(firstUser.content).trim().replace(/\s+/g, " ");
-      return trimmed.length > 42 ? `${trimmed.slice(0, 42)}...` : trimmed;
-    }
-
-    function getStoredTheme() {
-      const raw = String(localStorage.getItem(THEME_STORAGE_KEY) || "").toLowerCase();
-      return raw === "dark" || raw === "navy" ? raw : "light";
-    }
-
-    function syncThemeButtons(theme) {
-      const themeMap = {
-        light: themeLightBtn,
-        dark: themeDarkBtn,
-        navy: themeNavyBtn,
-      };
-      for (const [key, btn] of Object.entries(themeMap)) {
-        if (!btn) continue;
-        const active = key === theme;
-        btn.classList.toggle("active", active);
-        btn.setAttribute("aria-pressed", String(active));
-      }
-    }
-
-    function setTheme(theme) {
-      const normalized = theme === "dark" || theme === "navy" ? theme : "light";
-      document.documentElement.setAttribute("data-theme", normalized);
-      syncThemeButtons(normalized);
-      try {
-        localStorage.setItem(THEME_STORAGE_KEY, normalized);
-      } catch (_) {
-        // no-op
-      }
-    }
-
     function setLoading(loading) {
       sendEl.disabled = loading;
       if (statusEl) {
@@ -1091,7 +758,7 @@
       inputEl.focus();
     }
 
-    function clearChat(persistCurrent = true) {
+    function clearChat() {
       history = [];
       lastAssistantReply = "";
       latestReportText = "";
@@ -1099,39 +766,34 @@
       errorEl.textContent = "";
       attachStatusEl.textContent = "";
       resetCaseSummaryPanel();
-      addMessage("assistant", WELCOME_MESSAGE);
-      if (persistCurrent && currentChatId) {
-        saveCurrentChat({ allowEmpty: true, overrideTitle: "New Chat" });
-      }
+      addMessage("assistant", "Share your legal issue. I will identify the likely category, explain the general legal context, and suggest high-level next steps.");
     }
 
     function generateChatId() {
       return 'chat_' + Math.random().toString(36).substr(2, 9) + '_' + Date.now();
     }
 
-    function saveCurrentChat(options = {}) {
-      const allowEmpty = Boolean(options.allowEmpty);
-      const overrideTitle = options.overrideTitle || "";
-      if (!allowEmpty && history.length === 0) return;
-      if (!currentChatId) currentChatId = generateChatId();
+    function saveCurrentChat() {
+      if (history.length === 0) return;
 
-      const chatRecord = {
-        id: currentChatId,
-        title: overrideTitle || buildChatTitle(history),
-        history: [...history],
-        messagesHtml: messagesEl.innerHTML,
-        timestamp: Date.now(),
-        caseWorkflow: latestCaseWorkflow,
-        lastAssistantReply,
-        latestReportText,
-      };
+      const title = history.find(m => m.role === 'user')?.content.substring(0, 30) + "..." || "New Chat";
 
-      const chatIndex = savedChats.findIndex((c) => c.id === currentChatId);
+      const chatIndex = savedChats.findIndex(c => c.id === currentChatId);
       if (chatIndex >= 0) {
-        savedChats.splice(chatIndex, 1);
+        savedChats[chatIndex].history = [...history];
+        savedChats[chatIndex].messagesHtml = messagesEl.innerHTML;
+        savedChats[chatIndex].title = title;
+      } else {
+        if (!currentChatId) currentChatId = generateChatId();
+        savedChats.unshift({
+          id: currentChatId,
+          title: title,
+          history: [...history],
+          messagesHtml: messagesEl.innerHTML,
+          timestamp: Date.now()
+        });
       }
-      savedChats.unshift(chatRecord);
-      persistSavedChats();
+      localStorage.setItem('saulgpt_chats', JSON.stringify(savedChats));
       renderChatHistory();
     }
 
@@ -1140,48 +802,32 @@
       if (!listEl) return;
 
       listEl.innerHTML = '';
-      if (savedChats.length === 0) {
-        const empty = document.createElement("div");
-        empty.className = "history-empty";
-        empty.textContent = "No saved threads yet.";
-        listEl.appendChild(empty);
-        return;
-      }
-
-      savedChats.forEach((chat) => {
-        const btn = document.createElement("button");
-        btn.type = "button";
-        btn.className = `history-item${chat.id === currentChatId ? " active" : ""}`;
-        btn.textContent = chat.title || "New Chat";
+      savedChats.forEach(chat => {
+        const btn = document.createElement('button');
+        btn.textContent = chat.title;
         btn.onclick = () => loadChat(chat.id);
+        if (chat.id === currentChatId) {
+          btn.style.borderLeft = "4px solid var(--primary)";
+          btn.style.fontWeight = "bold";
+        }
         listEl.appendChild(btn);
       });
     }
 
     function loadChat(chatId) {
-      const chat = savedChats.find((c) => c.id === chatId);
+      const chat = savedChats.find(c => c.id === chatId);
       if (!chat) return;
 
       currentChatId = chatId;
       history = [...chat.history];
-      messagesEl.innerHTML = chat.messagesHtml || "";
-      lastAssistantReply = chat.lastAssistantReply || "";
-      latestReportText = chat.latestReportText || "";
-      updateCaseSummaryPanel(chat.caseWorkflow || null);
+      messagesEl.innerHTML = chat.messagesHtml;
 
-      if (!messagesEl.innerHTML.trim()) {
-        messagesEl.innerHTML = "";
-        if (history.length === 0) {
-          addMessage("assistant", WELCOME_MESSAGE);
-        } else {
-          history.forEach((turn) => addMessage(turn.role, turn.content));
-        }
-      }
-
+      // Re-attach listener if references exist
       const toggles = messagesEl.querySelectorAll('.ref-toggle');
-      toggles.forEach((toggle) => {
+      toggles.forEach(toggle => {
         const panel = toggle.parentElement.nextElementSibling;
         if (panel && panel.classList.contains('ref-panel')) {
+          // Need to clone and replace to avoid multiple listeners if loaded multiple times, though innerHTML replacement clears them anyway
           const newToggle = toggle.cloneNode(true);
           toggle.parentNode.replaceChild(newToggle, toggle);
           newToggle.addEventListener("click", () => {
@@ -1198,8 +844,8 @@
 
     function startNewChat() {
       currentChatId = generateChatId();
-      clearChat(false);
-      saveCurrentChat({ allowEmpty: true, overrideTitle: "New Chat" });
+      clearChat();
+      renderChatHistory();
     }
 
     function openFilePicker() {
@@ -1487,8 +1133,6 @@
       }
       await submitMessage("Generate report now.");
     }
-
-    setTheme(getStoredTheme());
 
     if (savedChats.length > 0) {
       renderChatHistory();
