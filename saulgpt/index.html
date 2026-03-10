@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -10,13 +10,15 @@
       --bg: #f4f6fb;
       --bg-gradient: linear-gradient(160deg, #edf2ff 0%, #f7f8fc 45%, #eef6f3 100%);
       --panel: #ffffff;
-      --sidebar-bg: #fbfcff;
-      --topbar-bg: #ffffff;
-      --messages-bg: #f9fbff;
+      --sidebar: #fbfcff;
+      --topbar: #ffffff;
+      --composer: #ffffff;
+      --messages: #f9fbff;
       --surface: #ffffff;
       --surface-soft: #f7faff;
       --border: #d9dfeb;
       --text: #192235;
+      --text-white: #ffffff;
       --muted: #5f6c84;
       --primary: #0f62fe;
       --user: #e6f0ff;
@@ -26,6 +28,7 @@
       --warn-bg: #fff4e6;
       --warn-border: #ffd7ab;
       --danger: #b42318;
+      --shadow: rgba(16, 37, 68, 0.12);
       --summary-bg: #ffffff;
       --summary-value-bg: #f8fbff;
       --summary-value-border: #e1e8f5;
@@ -38,26 +41,29 @@
       --app-shadow: 0 14px 30px rgba(16, 37, 68, 0.12);
     }
 
-    :root[data-theme="dark"] {
-      --bg: #0f1520;
+    [data-theme="dark"] {
+      --bg: #0b0f1a;
       --bg-gradient: linear-gradient(160deg, #0f1622 0%, #141f2f 48%, #182435 100%);
-      --panel: #141c28;
-      --sidebar-bg: #172130;
-      --topbar-bg: #152030;
-      --messages-bg: #111a27;
+      --panel: #131c2d;
+      --sidebar: #1a253a;
+      --topbar: #1a253a;
+      --composer: #131c2d;
+      --messages: #111a27;
       --surface: #1a2536;
       --surface-soft: #223149;
-      --border: #2d3a52;
-      --text: #e5ecf8;
-      --muted: #a4b1c7;
-      --primary: #5a88ff;
-      --user: #213454;
+      --border: #2b3a5a;
+      --text: #e1e7f0;
+      --text-white: #ffffff;
+      --muted: #8e9dbd;
+      --primary: #4d8dfa;
+      --user: #1e2d4d;
       --user-border: #35527a;
-      --assistant: #172334;
+      --assistant: #1a253a;
       --warn: #ffd08c;
-      --warn-bg: #3a2c1a;
+      --warn-bg: #2d1e00;
       --warn-border: #6f5330;
       --danger: #ff8f8a;
+      --shadow: rgba(0, 0, 0, 0.4);
       --summary-bg: #1a2739;
       --summary-value-bg: #1f3046;
       --summary-value-border: #2e445f;
@@ -70,13 +76,14 @@
       --app-shadow: 0 16px 36px rgba(2, 6, 12, 0.55);
     }
 
-    :root[data-theme="navy"] {
+    [data-theme="navy"] {
       --bg: #e4ebf7;
       --bg-gradient: linear-gradient(160deg, #dde7f7 0%, #e8eef9 52%, #dce6f4 100%);
       --panel: #f5f8ff;
-      --sidebar-bg: #edf3fd;
-      --topbar-bg: #f8fbff;
-      --messages-bg: #f2f6fd;
+      --sidebar: #edf3fd;
+      --topbar: #f8fbff;
+      --composer: #f5f8ff;
+      --messages: #f2f6fd;
       --surface: #fafdff;
       --surface-soft: #eaf1fc;
       --border: #c1d1e7;
@@ -115,6 +122,7 @@
       display: flex;
       justify-content: center;
       padding: 20px;
+      transition: background 0.3s, color 0.3s;
     }
 
     .app {
@@ -123,22 +131,24 @@
       height: calc(100vh - 40px);
       background: var(--panel);
       border: 1px solid var(--border);
-      border-radius: 16px;
       box-shadow: var(--app-shadow);
       display: grid;
       grid-template-columns: 300px 1fr;
       overflow: hidden;
+      transition: background 0.3s, border-color 0.3s, box-shadow 0.3s;
     }
 
     .sidebar {
       border-right: 1px solid var(--border);
       padding: 18px;
-      background: var(--sidebar-bg);
+      background: var(--sidebar);
+      transition: background 0.3s, border-color 0.3s;
     }
 
     .brand {
       margin: 0 0 6px;
       font-size: 1.35rem;
+      color: var(--text);
     }
 
     .subtitle {
@@ -155,6 +165,7 @@
     .quick h3 {
       margin: 0 0 10px;
       font-size: 0.95rem;
+      color: var(--text);
     }
 
     .quick button {
@@ -164,20 +175,20 @@
       padding: 10px;
       border: 1px solid var(--border);
       border-radius: 10px;
-      background: var(--surface);
+      background: var(--panel);
       cursor: pointer;
       color: var(--text);
     }
 
     .quick button:hover {
-      border-color: #bac7e6;
-      background: var(--surface-soft);
+      border-color: var(--primary);
+      background: var(--bg);
     }
 
     .disclaimer {
       margin-top: 18px;
       padding: 10px;
-      background: var(--surface-soft);
+      background: var(--bg);
       border-radius: 10px;
       border: 1px solid var(--border);
       color: var(--muted);
@@ -314,6 +325,8 @@
       display: grid;
       grid-template-rows: auto 1fr auto;
       min-height: 0;
+      background: var(--panel);
+      transition: background 0.3s;
     }
 
     .topbar {
@@ -322,13 +335,15 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: var(--topbar-bg);
+      background: var(--topbar);
+      transition: background 0.3s, border-color 0.3s;
     }
 
     .topbar h2 {
       margin: 0;
       font-size: 1rem;
       font-weight: 700;
+      color: var(--text);
     }
 
     .status {
@@ -383,7 +398,7 @@
     .export-btn {
       border: 1px solid var(--border);
       border-radius: 8px;
-      background: var(--surface);
+      background: var(--panel);
       color: var(--text);
       padding: 6px 10px;
       font-size: 0.85rem;
@@ -391,14 +406,15 @@
     }
 
     .export-btn:hover {
-      border-color: #b9c5df;
-      background: var(--surface-soft);
+      border-color: var(--primary);
+      background: var(--bg);
     }
 
     .messages {
       padding: 18px;
       overflow-y: auto;
-      background: var(--messages-bg);
+      background: var(--messages);
+      transition: background 0.3s;
     }
 
     .message {
@@ -409,6 +425,8 @@
       border: 1px solid var(--border);
       white-space: pre-wrap;
       line-height: 1.5;
+      color: var(--text);
+      transition: background 0.3s, border-color 0.3s, color 0.3s;
     }
 
     .message.user {
@@ -440,7 +458,7 @@
 
     .ref-toggle {
       border: 1px solid var(--border);
-      background: var(--surface);
+      background: var(--panel);
       width: 22px;
       height: 22px;
       border-radius: 50%;
@@ -455,8 +473,7 @@
     }
 
     .ref-toggle:hover {
-      border-color: #b9c5df;
-      background: var(--surface-soft);
+      border-color: var(--primary);
     }
 
     .ref-panel {
@@ -492,7 +509,8 @@
     .composer {
       padding: 12px 14px;
       border-top: 1px solid var(--border);
-      background: var(--topbar-bg);
+      background: var(--composer);
+      transition: background 0.3s, border-color 0.3s;
     }
 
     .composer form {
@@ -517,7 +535,7 @@
       height: 40px;
       border-radius: 50%;
       border: 1px solid var(--border);
-      background: var(--surface);
+      background: var(--panel);
       color: var(--text);
       font-size: 22px;
       line-height: 1;
@@ -529,8 +547,7 @@
     }
 
     .attach-btn:hover {
-      border-color: #aebddd;
-      background: var(--surface-soft);
+      border-color: var(--primary);
     }
 
     .attach-status {
@@ -549,8 +566,18 @@
       border-radius: 10px;
       padding: 10px 12px;
       font: inherit;
+      background: var(--panel);
       color: var(--text);
-      background: var(--input-bg);
+      transition: background 0.3s, border-color 0.3s, color 0.3s;
+    }
+
+    textarea::placeholder {
+      color: var(--muted);
+    }
+
+    textarea:focus {
+      outline: none;
+      border-color: var(--primary);
     }
 
     .actions {
@@ -563,7 +590,7 @@
       border: 0;
       border-radius: 10px;
       background: var(--primary);
-      color: #fff;
+      color: var(--text-white);
       font-weight: 700;
       padding: 10px 16px;
       cursor: pointer;
@@ -572,7 +599,7 @@
     button.clear {
       border: 1px solid var(--border);
       border-radius: 10px;
-      background: var(--surface);
+      background: var(--panel);
       color: var(--text);
       padding: 9px 12px;
       cursor: pointer;
@@ -613,6 +640,31 @@
         grid-column: 1 / -1;
         flex-direction: row;
       }
+    }
+
+    /* Theme Toggle Button */
+    .theme-toggle {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: var(--text-white);
+      border: none;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      z-index: 1000;
+      transition: transform 0.2s;
+    }
+
+    .theme-toggle:hover {
+      transform: scale(1.1);
     }
   </style>
 </head>
@@ -656,10 +708,12 @@
         </div>
         <div id="missingFields" class="missing-fields">Missing fields will appear here when intake begins.</div>
         <ul id="factsList" class="facts-list"></ul>
-        <button id="generateReportBtn" class="generate-btn" type="button" onclick="generateReportNow()" disabled>Generate Report</button>
+        <button id="generateReportBtn" class="generate-btn" type="button" onclick="generateReportNow()"
+          disabled>Generate Report</button>
       </div>
 
-      <div id="disclaimer" class="disclaimer">SaulGPT provides legal information only, not legal advice. Consult a qualified lawyer for case-specific action.</div>
+      <div id="disclaimer" class="disclaimer">SaulGPT provides legal information only, not legal advice. Consult a
+        qualified lawyer for case-specific action.</div>
 
     </aside>
 
@@ -701,6 +755,7 @@
         <div id="error" class="error"></div>
       </div>
     </main>
+    <button id="themeToggle" class="theme-toggle" onclick="toggleTheme()" title="Toggle Theme">🌓</button>
   </div>
 
   <script>
@@ -794,6 +849,20 @@
     let history = [];
     let savedChats = loadSavedChats();
     let currentChatId = null;
+    let isDark = localStorage.getItem('saulgpt_theme') === 'dark';
+
+    function applyTheme() {
+      document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+      const toggleBtn = document.getElementById('themeToggle');
+      if (toggleBtn) toggleBtn.textContent = isDark ? '☀️' : '🌓';
+    }
+
+    function toggleTheme() {
+      isDark = !isDark;
+      localStorage.setItem('saulgpt_theme', isDark ? 'dark' : 'light');
+      applyTheme();
+    }
+    applyTheme();
 
     const messagesEl = document.getElementById("messages");
     const inputEl = document.getElementById("input");
