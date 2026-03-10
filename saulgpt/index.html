@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -19,7 +20,9 @@
       --danger: #b42318;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
     body {
       margin: 0;
@@ -51,11 +54,27 @@
       background: #fbfcff;
     }
 
-    .brand { margin: 0 0 6px; font-size: 1.35rem; }
-    .subtitle { margin: 0; color: var(--muted); font-size: 0.92rem; line-height: 1.4; }
+    .brand {
+      margin: 0 0 6px;
+      font-size: 1.35rem;
+    }
 
-    .quick { margin-top: 18px; }
-    .quick h3 { margin: 0 0 10px; font-size: 0.95rem; }
+    .subtitle {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.4;
+    }
+
+    .quick {
+      margin-top: 18px;
+    }
+
+    .quick h3 {
+      margin: 0 0 10px;
+      font-size: 0.95rem;
+    }
+
     .quick button {
       width: 100%;
       text-align: left;
@@ -67,7 +86,11 @@
       cursor: pointer;
       color: var(--text);
     }
-    .quick button:hover { border-color: #bac7e6; background: #f7faff; }
+
+    .quick button:hover {
+      border-color: #bac7e6;
+      background: #f7faff;
+    }
 
     .disclaimer {
       margin-top: 18px;
@@ -80,7 +103,11 @@
       line-height: 1.4;
     }
 
-    .main { display: grid; grid-template-rows: auto 1fr auto; min-height: 0; }
+    .main {
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      min-height: 0;
+    }
 
     .topbar {
       padding: 14px 18px;
@@ -91,10 +118,30 @@
       background: #fff;
     }
 
-    .topbar h2 { margin: 0; font-size: 1rem; font-weight: 700; }
-    .status { color: var(--muted); font-size: 0.9rem; min-height: 18px; }
-    .top-meta { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
-    .top-actions { display: flex; gap: 8px; }
+    .topbar h2 {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .status {
+      color: var(--muted);
+      font-size: 0.9rem;
+      min-height: 18px;
+    }
+
+    .top-meta {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 4px;
+    }
+
+    .top-actions {
+      display: flex;
+      gap: 8px;
+    }
+
     .export-btn {
       border: 1px solid var(--border);
       border-radius: 8px;
@@ -104,9 +151,17 @@
       font-size: 0.85rem;
       cursor: pointer;
     }
-    .export-btn:hover { border-color: #b9c5df; background: #f7faff; }
 
-    .messages { padding: 18px; overflow-y: auto; background: #f9fbff; }
+    .export-btn:hover {
+      border-color: #b9c5df;
+      background: #f7faff;
+    }
+
+    .messages {
+      padding: 18px;
+      overflow-y: auto;
+      background: #f9fbff;
+    }
 
     .message {
       max-width: 86%;
@@ -118,9 +173,21 @@
       line-height: 1.5;
     }
 
-    .message.user { margin-left: auto; background: var(--user); border-color: #c9dafc; }
-    .message.assistant { background: var(--assistant); }
-    .message.notice { background: var(--warn-bg); border-color: #ffd7ab; color: var(--warn); }
+    .message.user {
+      margin-left: auto;
+      background: var(--user);
+      border-color: #c9dafc;
+    }
+
+    .message.assistant {
+      background: var(--assistant);
+    }
+
+    .message.notice {
+      background: var(--warn-bg);
+      border-color: #ffd7ab;
+      color: var(--warn);
+    }
 
     .meta {
       font-size: 0.8rem;
@@ -165,7 +232,9 @@
       color: #273149;
     }
 
-    .ref-panel.open { display: block; }
+    .ref-panel.open {
+      display: block;
+    }
 
     .ref-heading {
       font-weight: 700;
@@ -182,14 +251,22 @@
       line-height: 1.35;
     }
 
-    .composer { padding: 12px 14px; border-top: 1px solid var(--border); background: #fff; }
+    .composer {
+      padding: 12px 14px;
+      border-top: 1px solid var(--border);
+      background: #fff;
+    }
+
     .composer form {
       display: grid;
       grid-template-columns: auto 1fr auto;
       gap: 10px;
       align-items: end;
     }
-    .hidden-file-input { display: none; }
+
+    .hidden-file-input {
+      display: none;
+    }
 
     .attach-col {
       display: flex;
@@ -236,7 +313,11 @@
       font: inherit;
     }
 
-    .actions { display: flex; flex-direction: column; gap: 8px; }
+    .actions {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
 
     button.send {
       border: 0;
@@ -257,17 +338,37 @@
       cursor: pointer;
     }
 
-    button:disabled { opacity: 0.6; cursor: not-allowed; }
+    button:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
 
-    .error { color: var(--danger); font-size: 0.9rem; margin-top: 8px; min-height: 20px; }
+    .error {
+      color: var(--danger);
+      font-size: 0.9rem;
+      margin-top: 8px;
+      min-height: 20px;
+    }
 
     @media (max-width: 920px) {
-      .app { grid-template-columns: 1fr; height: auto; }
-      .sidebar { border-right: 0; border-bottom: 1px solid var(--border); }
-      .main { min-height: 70vh; }
+      .app {
+        grid-template-columns: 1fr;
+        height: auto;
+      }
+
+      .sidebar {
+        border-right: 0;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .main {
+        min-height: 70vh;
+      }
+
       .composer form {
         grid-template-columns: auto 1fr;
       }
+
       .actions {
         grid-column: 1 / -1;
         flex-direction: row;
@@ -275,20 +376,22 @@
     }
   </style>
 </head>
+
 <body>
   <div class="app">
     <aside class="sidebar">
       <h1 class="brand">SaulGPT</h1>
-      <p class="subtitle">Ask law-related questions for general legal understanding, issue categorization, and document-check guidance.</p>
+      <p class="subtitle">Ask law-related questions for general legal understanding, issue categorization, and
+        document-check guidance.</p>
 
       <div class="quick">
-        <h3>Quick prompts</h3>
-        <button onclick="insertPrompt('My landlord is refusing to return deposit after I vacated. What type of legal issue is this?')">Identify legal category</button>
-        <button onclick="insertPrompt('Explain the general legal context of an online payment fraud in India.')">Explain legal context</button>
-        <button onclick="insertPrompt('What documents should I gather for an employment salary dispute?')">Document checklist</button>
+        <button id="newChatBtn" onclick="startNewChat()">+ New Chat</button>
+        <h3 style="margin-top: 15px;">Chat History</h3>
+        <div id="chatHistoryList"></div>
       </div>
 
-      <div id="disclaimer" class="disclaimer">SaulGPT provides legal information only, not legal advice. Consult a qualified lawyer for case-specific action.</div>
+      <div id="disclaimer" class="disclaimer">SaulGPT provides legal information only, not legal advice. Consult a
+        qualified lawyer for case-specific action.</div>
 
     </aside>
 
@@ -308,9 +411,11 @@
 
       <div class="composer">
         <form onsubmit="sendMessage(event)">
-          <input id="docFiles" class="hidden-file-input" type="file" accept=".pdf,.docx,.txt" multiple onchange="handleFilePick(event)" />
+          <input id="docFiles" class="hidden-file-input" type="file" accept=".pdf,.docx,.txt" multiple
+            onchange="handleFilePick(event)" />
           <div class="attach-col">
-            <button class="attach-btn" type="button" title="Upload documents" aria-label="Upload documents" onclick="openFilePicker()">+</button>
+            <button class="attach-btn" type="button" title="Upload documents" aria-label="Upload documents"
+              onclick="openFilePicker()">+</button>
           </div>
           <textarea id="input" placeholder="Describe your case facts or ask any law-related question..."></textarea>
           <div class="actions">
@@ -354,7 +459,9 @@
     }
 
     const API_BASE_CANDIDATES = getApiBaseCandidates();
-    const history = [];
+    let history = [];
+    let savedChats = JSON.parse(localStorage.getItem('saulgpt_chats')) || [];
+    let currentChatId = null;
 
     const messagesEl = document.getElementById("messages");
     const inputEl = document.getElementById("input");
@@ -450,12 +557,91 @@
     }
 
     function clearChat() {
-      history.length = 0;
+      history = [];
       lastAssistantReply = "";
       messagesEl.innerHTML = "";
       errorEl.textContent = "";
       attachStatusEl.textContent = "";
       addMessage("assistant", "Share your legal issue. I will identify the likely category, explain the general legal context, and suggest high-level next steps.");
+    }
+
+    function generateChatId() {
+      return 'chat_' + Math.random().toString(36).substr(2, 9) + '_' + Date.now();
+    }
+
+    function saveCurrentChat() {
+      if (history.length === 0) return;
+
+      const title = history.find(m => m.role === 'user')?.content.substring(0, 30) + "..." || "New Chat";
+
+      const chatIndex = savedChats.findIndex(c => c.id === currentChatId);
+      if (chatIndex >= 0) {
+        savedChats[chatIndex].history = [...history];
+        savedChats[chatIndex].messagesHtml = messagesEl.innerHTML;
+        savedChats[chatIndex].title = title;
+      } else {
+        if (!currentChatId) currentChatId = generateChatId();
+        savedChats.unshift({
+          id: currentChatId,
+          title: title,
+          history: [...history],
+          messagesHtml: messagesEl.innerHTML,
+          timestamp: Date.now()
+        });
+      }
+      localStorage.setItem('saulgpt_chats', JSON.stringify(savedChats));
+      renderChatHistory();
+    }
+
+    function renderChatHistory() {
+      const listEl = document.getElementById('chatHistoryList');
+      if (!listEl) return;
+
+      listEl.innerHTML = '';
+      savedChats.forEach(chat => {
+        const btn = document.createElement('button');
+        btn.textContent = chat.title;
+        btn.onclick = () => loadChat(chat.id);
+        if (chat.id === currentChatId) {
+          btn.style.borderLeft = "4px solid var(--primary)";
+          btn.style.fontWeight = "bold";
+        }
+        listEl.appendChild(btn);
+      });
+    }
+
+    function loadChat(chatId) {
+      const chat = savedChats.find(c => c.id === chatId);
+      if (!chat) return;
+
+      currentChatId = chatId;
+      history = [...chat.history];
+      messagesEl.innerHTML = chat.messagesHtml;
+
+      // Re-attach listener if references exist
+      const toggles = messagesEl.querySelectorAll('.ref-toggle');
+      toggles.forEach(toggle => {
+        const panel = toggle.parentElement.nextElementSibling;
+        if (panel && panel.classList.contains('ref-panel')) {
+          // Need to clone and replace to avoid multiple listeners if loaded multiple times, though innerHTML replacement clears them anyway
+          const newToggle = toggle.cloneNode(true);
+          toggle.parentNode.replaceChild(newToggle, toggle);
+          newToggle.addEventListener("click", () => {
+            const opened = panel.classList.toggle("open");
+            newToggle.setAttribute("aria-expanded", String(opened));
+            newToggle.textContent = opened ? "x" : "i";
+          });
+        }
+      });
+
+      messagesEl.scrollTop = messagesEl.scrollHeight;
+      renderChatHistory();
+    }
+
+    function startNewChat() {
+      currentChatId = generateChatId();
+      clearChat();
+      renderChatHistory();
     }
 
     function openFilePicker() {
@@ -667,6 +853,8 @@
 
       addMessage("user", message);
       history.push({ role: "user", content: message });
+      if (!currentChatId) currentChatId = generateChatId();
+      saveCurrentChat();
       inputEl.value = "";
       setLoading(true);
 
@@ -705,6 +893,7 @@
         const assistantMessage = addMessage("assistant", data.reply, data.redirected_to_law ? "notice" : "normal");
         history.push({ role: "assistant", content: data.reply });
         attachReferencesToMessage(assistantMessage, data.citations || []);
+        saveCurrentChat();
 
         if (data.disclaimer) {
           disclaimerEl.textContent = data.disclaimer;
@@ -717,7 +906,13 @@
       }
     }
 
-    clearChat();
+    if (savedChats.length > 0) {
+      renderChatHistory();
+      loadChat(savedChats[0].id);
+    } else {
+      startNewChat();
+    }
   </script>
 </body>
+
 </html>

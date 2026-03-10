@@ -93,40 +93,69 @@ LEGAL_CATEGORIES: Dict[str, set[str]] = {
     "Property or tenancy issue": {
         "property", "tenant", "tenancy", "landlord", "rent", "lease", "owner",
         "ownership", "eviction", "land", "deed", "mutation", "registry", "title",
+        "sublease", "allotment", "flat", "house", "apartment", "plot", "real estate",
+        "rera", "builder", "possession", "encumbrance", "stamp duty", "registration",
+        "conveyance", "partition", "probate", "will", "inheritance", "succession",
+        "trespass", "dispossession", "mortgage",
     },
     "Contract or payment dispute": {
         "contract", "agreement", "payment", "deposit", "refund", "invoice",
-        "breach", "dues", "advance", "money", "service",
+        "breach", "dues", "advance", "money", "service", "cheque", "bounce",
+        "dishonour", "negotiable", "promissory", "arbitration", "settlement",
+        "vendor", "supplier", "buyer", "seller", "transaction", "deal",
     },
     "Fraud or cheating concern": {
         "fraud", "cheat", "cheating", "forgery", "scam", "deception", "fake",
-        "misrepresentation", "impersonation",
+        "misrepresentation", "impersonation", "ponzi", "embezzlement",
+        "420", "criminal breach", "trust", "dishonest",
     },
     "Consumer issue": {
         "consumer", "defect", "deficiency", "warranty", "product", "seller",
-        "ecommerce", "replacement", "return",
+        "ecommerce", "replacement", "return", "refund", "amazon", "flipkart",
+        "service provider", "complaint forum", "district commission",
     },
     "Employment dispute": {
         "employment", "salary", "termination", "dismissal", "workplace", "hr",
-        "harassment", "wages", "bonus", "notice period",
+        "harassment", "wages", "bonus", "notice period", "pf", "gratuity",
+        "labour", "industrial", "retrenchment", "unfair dismissal", "employer",
     },
     "Family or relationship dispute": {
         "divorce", "custody", "maintenance", "marriage", "domestic", "inheritance",
-        "succession", "family", "will",
+        "succession", "family", "will", "alimony", "dowry", "matrimonial",
+        "guardian", "adoption", "child", "spouse", "husband", "wife",
     },
     "Cyber or online harm": {
         "cyber", "online", "phishing", "hacked", "social media", "digital",
-        "data", "account", "otp",
+        "data", "account", "otp", "upi", "payment fraud", "bank fraud",
+        "email", "whatsapp", "instagram", "deepfake", "blackmail", "extortion online",
+        "it act", "cybercrime", "identity theft",
     },
     "Defamation or reputation issue": {
         "defamation", "reputation", "false statement", "public post", "libel", "slander",
+        "character", "honour", "dignity",
     },
     "Traffic or road incident": {
         "traffic", "road", "vehicle", "accident", "driving", "license", "challan",
+        "motor", "car", "truck", "mva", "insurance claim", "hit and run",
+    },
+    "FIR and police complaint": {
+        "fir", "first information report", "police complaint", "police station",
+        "register complaint", "lodge complaint", "section 154", "cognizable",
+        "non-cognizable", "chargesheet", "charge sheet", "challan",
+        "investigation", "arrest", "zero fir", "complaint to police",
+        "magistrate", "crpc", "bnss",
+    },
+    "Bail and custody": {
+        "bail", "anticipatory bail", "regular bail", "remand", "custody",
+        "detention", "arrested", "locked up", "jail", "prison",
+        "section 436", "section 437", "section 438", "section 439",
+        "bailable", "non-bailable", "surety",
     },
     "General criminal concern": {
         "crime", "offence", "offense", "threat", "violence", "assault", "police",
-        "arrest", "intimidation",
+        "arrest", "intimidation", "murder", "theft", "robbery", "kidnapping",
+        "rape", "harassment", "criminal", "ipc", "bns", "warrant", "quash",
+        "acquittal", "conviction", "sentence", "punishment", "accused",
     },
 }
 
@@ -317,9 +346,22 @@ def _category_context(category: str) -> str:
         "Cyber or online harm": "This usually concerns digital evidence, unauthorized access, online impersonation, or misuse of personal information.",
         "Defamation or reputation issue": "This usually concerns allegedly harmful statements and whether they caused reputational impact.",
         "Traffic or road incident": "This usually concerns compliance with road-safety rules, incident facts, and responsibility allocation.",
-        "General criminal concern": "This usually concerns allegations of wrongful conduct, evidence quality, and procedural safeguards.",
+        "FIR and police complaint": (
+            "An FIR (First Information Report) is a written document prepared by the police when they receive information about a cognizable offence. "
+            "Under the Bharatiya Nagarik Suraksha Sanhita 2023 (earlier CrPC), any person can report a cognizable offence at the nearest police station. "
+            "If police refuse to register an FIR, you can approach the Superintendent of Police or file a complaint directly before a Magistrate. "
+            "A 'Zero FIR' can be filed at any police station regardless of jurisdiction, which is then transferred to the appropriate station."
+        ),
+        "Bail and custody": (
+            "Bail is the conditional release of an arrested person pending trial. "
+            "For bailable offences, bail is a right. For non-bailable offences, bail is discretionary and granted by a Magistrate or Sessions Court. "
+            "Anticipatory bail (pre-arrest bail) can be sought from the Sessions Court or High Court when there is a reasonable apprehension of arrest. "
+            "The court considers factors like nature of the offence, prior criminal record, flight risk, and likelihood of tampering with evidence."
+        ),
+        "General criminal concern": "This usually concerns allegations of wrongful conduct, evidence quality, and procedural safeguards under Indian criminal law.",
     }
     return contexts.get(category, "This appears to involve a legal disagreement where facts, documents, and timeline are central to understanding the issue.")
+
 
 
 def _document_observations(retrieval: List[Dict[str, Any]]) -> str:
