@@ -116,3 +116,146 @@ Section 31 RERA | Complaint mechanism before Real Estate Regulatory Authority or
 
 Rent Control (State-specific) | Landlord-tenant rights including rent fixation, eviction grounds, and tenant protections are primarily governed by state rent control statutes. | State Rent Control Regimes (State Acts) | 2026-03-10
 Ownership Proof Checklist | Ownership proof commonly relies on registered sale deed/title deed, mutation records, encumbrance certificate, tax receipts, and possession evidence. | SaulGPT Property Procedure Playbook | 2026-03-10
+
+# FIR and Criminal Procedure
+Procedure - FIR Registration | An FIR (First Information Report) must be registered by police when information about a cognizable offence is received. The informant has the right to a free copy of the FIR. Under BNSS 2023 (Section 173), police cannot refuse to register an FIR for a cognizable offence. | SaulGPT Legal Procedure Playbook | 2026-03-10
+Procedure - Zero FIR | A Zero FIR can be filed at any police station regardless of jurisdiction over the offence. The station receiving the Zero FIR must forward it to the jurisdictionally competent police station promptly. | SaulGPT Legal Procedure Playbook | 2026-03-10
+Procedure - FIR Refused by Police | If police refuse to register an FIR for a cognizable offence, the aggrieved person can send a written complaint by post to the Superintendent of Police, or file a complaint directly before a Magistrate who may order police to investigate. | SaulGPT Legal Procedure Playbook | 2026-03-10
+Procedure - Cognizable vs Non-Cognizable | Cognizable offences allow police to arrest without a warrant and investigate without Magistrate order (e.g., murder, theft, robbery, assault). Non-cognizable offences require a Magistrate's permission before police can investigate (e.g., cheating, forgery). | SaulGPT Legal Procedure Playbook | 2026-03-10
+Section 173 BNSS 2023 | Registration of FIR by police officer for cognizable offences under Bharatiya Nagarik Suraksha Sanhita 2023 replacing CrPC Section 154. | India Code - Bharatiya Nagarik Suraksha Sanhita 2023 | 2024-07-01
+Section 175 BNSS 2023 | Power of police to investigate cognizable offences without order from Magistrate under BNSS 2023. | India Code - Bharatiya Nagarik Suraksha Sanhita 2023 | 2024-07-01
+
+# Bail
+Section 480 BNSS 2023 | Bail in bailable offences - when accused of bailable offence is arrested, bail is a matter of right and cannot be refused. Replaces CrPC Section 436. | India Code - Bharatiya Nagarik Suraksha Sanhita 2023 | 2024-07-01
+Section 483 BNSS 2023 | Bail in non-bailable offences - discretionary grant of bail by court considering nature and gravity of accusation, prior criminal record, likelihood of fleeing, and risk of tampering with evidence. Replaces CrPC Section 437. | India Code - Bharatiya Nagarik Suraksha Sanhita 2023 | 2024-07-01
+Section 484 BNSS 2023 | Special powers of Sessions Court and High Court regarding bail in non-bailable offences. Replaces CrPC Section 439. | India Code - Bharatiya Nagarik Suraksha Sanhita 2023 | 2024-07-01
+Section 482 BNSS 2023 | Anticipatory bail - direction by High Court or Sessions Court that if a person is arrested for specified non-bailable offences, they shall be released on bail. Replaces CrPC Section 438. | India Code - Bharatiya Nagarik Suraksha Sanhita 2023 | 2024-07-01
+Procedure - Bail Application | A bail application must contain facts of arrest, offence alleged, grounds for bail, ties to community, no-flight-risk assertion, and non-tampering undertaking. Supported by surety bonds and personal bond. | SaulGPT Legal Procedure Playbook | 2026-03-10
+
+# Employment Law
+Section 25F Industrial Disputes Act | Conditions for retrenchment of workmen including notice, compensation, and government notification requirements. | India Code - Industrial Disputes Act 1947 | 1947-04-01
+Section 4 Payment of Wages Act | Wage periods and timely payment obligations of employers. | India Code - Payment of Wages Act 1936 | 1937-03-28
+Procedure - Wrongful Termination | An employee terminated without following due process (notice period, retrenchment compensation, misconduct inquiry) can file a complaint before the Labour Commissioner or Industrial Tribunal. | SaulGPT Legal Procedure Playbook | 2026-03-10
+Section 12 Maternity Benefit Act | Protection of women from dismissal during pregnancy and maternity leave period. Employer cannot discharge a woman employee on account of her absence during maternity leave. | India Code - Maternity Benefit Act 1961 | 1963-11-01
+
+# Family Law
+Section 13 Hindu Marriage Act | Grounds for divorce under Hindu Marriage Act including adultery, cruelty, desertion, conversion, and mental disorder. | India Code - Hindu Marriage Act 1955 | 1955-05-18
+Section 125 CrPC / Section 144 BNSS | Maintenance to wives, children, and parents who are unable to maintain themselves from persons with sufficient means. | India Code - BNSS 2023 / CrPC 1973 | 2024-07-01
+Section 2 Dowry Prohibition Act | Definition and prohibition of taking or giving of dowry, punishable with imprisonment. | India Code - Dowry Prohibition Act 1961 | 1961-05-20
+Section 498A IPC | Cruelty by husband or relatives of husband towards a married woman, including harassment for dowry. | India Code - Indian Penal Code 1860 | 1860-10-06
+
+# Cheque Bounce
+Section 138 NI Act - Procedure | Dishonour of cheque is a criminal offence. A legal notice must be sent within 30 days of receiving bank memo. If payment not made within 15 days of notice, a complaint must be filed before Magistrate within 30 more days. | India Code - Negotiable Instruments Act 1881 | 1881-12-09
+
+# ===========================
+# RENTAL AND TENANCY DISPUTES
+# ===========================
+Procedure - Rent Agreement | A rent/lease agreement should be in writing, signed by both parties, and registered if the term is 12 months or more. It must clearly state rent amount, deposit, notice period, and maintenance responsibilities. | SaulGPT Legal Procedure Playbook | 2026-03-10
+Procedure - Security Deposit Refund | A landlord must return the security deposit within a reasonable period (typically 30-60 days) after the tenant vacates, after deducting legitimate repair costs. Wrongful withholding of deposit can be challenged before civil court or consumer forum. | SaulGPT Legal Procedure Playbook | 2026-03-10
+Procedure - Illegal Eviction | A landlord cannot forcibly evict a tenant without following due process. Cutting off electricity, water, or locking the premises forcibly can amount to criminal intimidation and illegal dispossession. The tenant can approach a civil court for restoration of possession. | SaulGPT Legal Procedure Playbook | 2026-03-10
+Procedure - Rent Increase Dispute | A landlord cannot arbitrarily increase rent beyond what is agreed in the contract. In states with Rent Control Acts, the permissible rent increase is regulated. Tenants can challenge excessive rent hike before Rent Controller. | SaulGPT Legal Procedure Playbook | 2026-03-10
+Procedure - Landlord Not Returning Deposit | If a landlord refuses to return the security deposit without valid reason, the tenant can send a legal notice, approach consumer court for service deficiency, or file a civil suit for recovery of money. | SaulGPT Legal Procedure Playbook | 2026-03-10
+Procedure - Tenant Damaging Property | A landlord can deduct cost of damages from deposit. For major damages, a civil suit for recovery can be filed after providing the tenant a demand notice and opportunity to remedy. | SaulGPT Legal Procedure Playbook | 2026-03-10
+Section 106 Transfer of Property Act - Lease Termination | A monthly tenancy can be terminated by either party by giving 15 days notice expiring with a month's end. For yearly tenancies, 6 months notice is required unless the lease agreement specifies otherwise. | India Code - Transfer of Property Act 1882 | 1882-07-01
+Model Tenancy Act 2021 | The Model Tenancy Act 2021 provides for digital rent agreements, dispute resolution mechanisms, and clear rules on deposit limits, rent increases, and eviction timelines. States are encouraged to adopt it. | Ministry of Housing and Urban Affairs | 2021-06-02
+
+# ===========================
+# MOBILE PHONE AND DEVICE THEFT
+# ===========================
+Procedure - Mobile Phone Theft - FIR | If your mobile phone is stolen, immediately file an FIR at the nearest police station mentioning the IMEI number, make, model, and time/location of theft. Carry a copy of the purchase invoice or box. | SaulGPT Legal Procedure Playbook | 2026-03-10
+Procedure - Block Stolen Phone | After filing an FIR, report the stolen IMEI to your telecom operator to block the SIM and the device. You can also file a complaint on the CEIR (Central Equipment Identity Register) portal at ceir.gov.in to block the IMEI nationally. | SaulGPT Legal Procedure Playbook | 2026-03-10
+Procedure - Mobile Theft and Bank Fraud | If your phone is stolen and used for banking fraud, immediately call your bank to block the account/UPI, change all passwords from another device, and file separate complaints with the cyber crime cell and bank's fraud department. | SaulGPT Legal Procedure Playbook | 2026-03-10
+Section 378 IPC / Section 303 BNS | Theft is defined as moving movable property out of someone's possession without consent. Mobile phones, laptops, and electronic devices are covered under theft provisions. Punishment under BNS can be up to 3 years imprisonment and/or fine. | India Code - BNS 2023 / IPC 1860 | 2024-07-01
+Section 380 IPC / Section 305 BNS | Theft in a dwelling house, tent, vessel used as a residence - carries higher punishment of up to 7 years imprisonment. Applicable when mobile is stolen from home or accommodation. | India Code - BNS 2023 / IPC 1860 | 2024-07-01
+Procedure - Chain Snatching / Robbery | Snatching of mobile or jewellery using force or threat is robbery (Section 390 IPC / Section 309 BNS), which carries imprisonment of up to 10 years. File FIR immediately. Collect CCTV footage from nearby premises and share with police. | SaulGPT Legal Procedure Playbook | 2026-03-10
+
+# ===========================
+# UPI AND ONLINE PAYMENT FRAUD
+# ===========================
+Procedure - UPI Fraud | If you receive a fraudulent UPI collect request or are tricked into sending money, immediately report on cybercrime.gov.in or call the National Cyber Crime Helpline 1930. Also report to your bank and UPI app within 24 hours for best chance of reversal. | SaulGPT Legal Procedure Playbook | 2026-03-10
+Procedure - Online Money Fraud | For online payment fraud, note the transaction ID, UTR number, and recipient UPI ID. File a complaint on cybercrime.gov.in and with the bank's fraud desk. RBI allows chargeback/reversal in genuine fraud cases. Banks must resolve complaints within 30-90 days. | SaulGPT Legal Procedure Playbook | 2026-03-10
+Procedure - OTP Fraud | Sharing OTP with anyone is against banking norms. If someone tricked you into sharing OTP and money was debited, report to cybercrime.gov.in immediately. File a police complaint under IT Act Section 66C (identity theft) and Section 66D (cheating by personation). | SaulGPT Legal Procedure Playbook | 2026-03-10
+Section 66C IT Act - Identity Theft | Punishment for identity theft - using another person's electronic signature, password, or unique identification feature fraudulently or dishonestly. Punishable with up to 3 years imprisonment and fine up to Rs 1 lakh. | India Code - Information Technology Act 2000 | 2000-10-17
+Section 66D IT Act - Online Cheating | Cheating by personation using computer resource or communication device. Includes fake calls, phishing, fake UPI IDs. Punishable with up to 3 years imprisonment and fine up to Rs 1 lakh. | India Code - Information Technology Act 2000 | 2000-10-17
+RBI Circular - Zero Liability | RBI's circular on customer protection limits customer liability in banking fraud. If fraud occurs without customer negligence, liability is zero. If reported within 3 working days of bank's fraud notification, liability is limited. | Reserve Bank of India Circulars | 2017-07-06
+
+# ===========================
+# ROAD ACCIDENTS AND MOTOR VEHICLES
+# ===========================
+Procedure - Road Accident FIR | In case of a road accident causing injury or death, any person aware of the accident can report to police. Failure to report a road accident is an offence. The vehicle owner/driver has a duty to report. | SaulGPT Legal Procedure Playbook | 2026-03-10
+Procedure - Motor Accident Claim | Accident victims or their families can file a claim before the Motor Accidents Claims Tribunal (MACT) within 6 months of the accident. No court fee is required. Compensation covers medical expenses, disability, loss of income, and death compensation. | SaulGPT Legal Procedure Playbook | 2026-03-10
+Section 166 Motor Vehicles Act | Application for compensation to Claims Tribunal by person injured or legal representative in case of death due to motor accident. Third party insurance is mandatory for all motor vehicles. | India Code - Motor Vehicles Act 1988 | 1989-07-01
+Section 161 Motor Vehicles Act | Good Samaritan protection - a person helping an accident victim in good faith shall not be liable for civil or criminal action and cannot be compelled to stay at the scene. | India Code - Motor Vehicles Act 1988 | 2019-08-01
+Section 177A Motor Vehicles Act | Penalties for traffic offences under the Motor Vehicles (Amendment) Act 2019 including speeding, drink driving, and driving without license. Fines significantly increased from 2019. | India Code - Motor Vehicles Act 1988 | 2019-09-01
+Procedure - Hit and Run | Under the scheme, central government compensates victims of hit-and-run accidents - Rs 12,500 for grievous injury and Rs 25,000 for death. Apply through the District Collector's office with police report within 6 months. | Motor Vehicles Act 1988 - Hit and Run Scheme | 1989-07-01
+
+# ===========================
+# WORKPLACE HARASSMENT
+# ===========================
+Procedure - Sexual Harassment at Workplace | Every employer with 10+ employees must constitute an Internal Complaints Committee (ICC). A complainant must submit written complaint to ICC within 3 months of last incident. ICC must complete inquiry within 90 days. | SaulGPT Legal Procedure Playbook | 2026-03-10
+Section 4 POSH Act | Mandatory constitution of Internal Complaints Committee (ICC) at every workplace with 10+ employees for addressing sexual harassment complaints. Employer failing to constitute ICC is liable to fine. | India Code - Sexual Harassment of Women at Workplace Act 2013 | 2013-12-09
+Section 9 POSH Act | Complaint mechanism for sexual harassment - written complaint to ICC/Local Complaints Committee within 3 months of incident (extendable by 3 months for sufficient cause). | India Code - Sexual Harassment of Women at Workplace Act 2013 | 2013-12-09
+Procedure - General Workplace Harassment | Non-sexual workplace harassment (bullying, discrimination, hostile work environment) can be addressed through HR complaint, labour commissioner complaint, or civil suit for hostile work environment. | SaulGPT Legal Procedure Playbook | 2026-03-10
+
+# ===========================
+# MEDICAL NEGLIGENCE
+# ===========================
+Procedure - Medical Negligence Complaint | A patient or legal heir can file a complaint against a doctor/hospital before: (1) District Consumer Forum, (2) State Medical Council, (3) National Consumer Disputes Redressal Commission for higher compensation amounts. A death certificate, medical records, and discharge summary are key documents. | SaulGPT Legal Procedure Playbook | 2026-03-10
+Section 304A IPC / Section 106 BNS | Causing death by negligence - applicable in cases of death due to medical negligence where there is no criminal intent but gross negligence. Punishable with up to 2 years imprisonment. | India Code - BNS 2023 / IPC 1860 | 2024-07-01
+Consumer Forum - Medical Negligence | Medical services are covered under Consumer Protection Act. Patients can claim compensation for deficiency in medical service including wrong diagnosis, botched surgery, or improper treatment before Consumer Disputes Redressal Commission. | India Code - Consumer Protection Act 2019 | 2020-07-20
+
+# ===========================
+# LAND ENCROACHMENT AND BOUNDARY DISPUTE
+# ===========================
+Procedure - Land Encroachment | If someone encroaches on your land, first gather all ownership documents (title deed, mutation records). You can file a civil suit for declaration and injunction, and also file a complaint with the Tehsildar/Revenue Officer for government-registered land encroachments. | SaulGPT Legal Procedure Playbook | 2026-03-10
+Section 441 IPC / Section 329 BNS | Criminal trespass - entering into property of another with intent to commit offence or intimidate, annoy, or insult the person in possession. Punishable with up to 3 months imprisonment and/or fine. | India Code - BNS 2023 / IPC 1860 | 2024-07-01
+Section 6 Specific Relief Act | Recovery of possession of immovable property - a person dispossessed without consent within 6 months can file a summary suit for restoration of possession without proving title. | India Code - Specific Relief Act 1963 | 1963-12-13
+
+# ===========================
+# DOMESTIC VIOLENCE
+# ===========================
+Procedure - Domestic Violence Complaint | A woman facing domestic violence can file a complaint with police under Section 498A IPC, approach a Protection Officer appointed under the PWDVA, or directly apply to a Magistrate for a protection/residence order. NGOs and legal aid centres can assist. | SaulGPT Legal Procedure Playbook | 2026-03-10
+Section 3 PWDVA | Definition of domestic violence - includes physical, emotional, verbal, economic, and sexual abuse by any person in a domestic relationship. | India Code - Protection of Women from Domestic Violence Act 2005 | 2006-10-26
+Section 19 PWDVA | Residence orders under the Domestic Violence Act - a Magistrate can direct the respondent not to dispossess or disturb the aggrieved person from shared household. | India Code - Protection of Women from Domestic Violence Act 2005 | 2006-10-26
+
+# ===========================
+# NOISE AND NUISANCE COMPLAINTS
+# ===========================
+Procedure - Noise Pollution Complaint | Excessive noise violating permitted decibel limits can be reported to the local police station, Resident Welfare Association, or the Pollution Control Board. Loudspeakers between 10pm and 6am in residential areas are generally prohibited. | SaulGPT Legal Procedure Playbook | 2026-03-10
+Noise Pollution Rules 2000 | Ambient noise standards prescribed - residential areas: 55dB day / 45dB night. Commercial areas: 65dB day / 55dB night. Use of loudspeakers or public address system only with written permission of authority. Between 10pm-6am use without permission is illegal. | Ministry of Environment - Noise Pollution Rules 2000 | 2000-02-14
+Section 268 IPC / Section 271 BNS | Public nuisance - any act, omission or illegal act causing common injury, danger, or annoyance to the public. Police can direct removal of nuisance. | India Code - BNS 2023 / IPC 1860 | 2024-07-01
+
+# ===========================
+# CONSUMER COMPLAINTS
+# ===========================
+Procedure - Consumer Complaint against E-commerce | If an online seller delivers a wrong, damaged, or fake product, first raise a complaint on the platform. If unresolved within 30 days, file a consumer complaint before the District Consumer Forum. Documents needed: order invoice, delivery photo, and chat proofs. | SaulGPT Legal Procedure Playbook | 2026-03-10
+Procedure - Insurance Claim Rejection | If an insurance company wrongfully rejects your claim, you can complain to the Insurance Ombudsman (free process) within 1 year of rejection. Alternatively approach Consumer Forum or IRDAI Bima Bharosa portal. | SaulGPT Legal Procedure Playbook | 2026-03-10
+Section 2(7) Consumer Protection Act 2019 | Definition of consumer - any person who buys goods or avails services for consideration, including online purchases. Includes e-commerce buyers and service recipients. | India Code - Consumer Protection Act 2019 | 2020-07-20
+Central Consumer Protection Authority (CCPA) | CCPA can take suo motu action against unfair trade practices, misleading advertisements, and violations of consumer rights. Consumers can also register complaints through the National Consumer Helpline 1800-11-4000. | India Code - Consumer Protection Act 2019 | 2020-07-20
+
+# ===========================
+# KIDNAPPING AND MISSING PERSONS
+# ===========================
+Procedure - Missing Person / Kidnapping | File an FIR immediately at the nearest police station for a missing person. Police cannot insist on a waiting period. For minors, an FIR for kidnapping must be registered immediately. You can also contact the District Child Protection Unit or CHILDLINE 1098. | SaulGPT Legal Procedure Playbook | 2026-03-10
+Section 359 IPC / Section 137 BNS | Kidnapping from India or from lawful guardianship - taking a person beyond or from their country or guardian without proper authority. | India Code - BNS 2023 / IPC 1860 | 2024-07-01
+Section 363 IPC / Section 137 BNS | Punishment for kidnapping - imprisonment up to 7 years and fine. For kidnapping for ransom, punishment extends to life imprisonment. | India Code - BNS 2023 / IPC 1860 | 2024-07-01
+
+# ===========================
+# CHIT FUND AND INVESTMENT FRAUD
+# ===========================
+Procedure - Chit Fund Fraud | Chit fund companies must be registered under the Chit Funds Act 1982. If a company disappears with your money, file FIR under Section 420 IPC (cheating), file a complaint with state Registrar of Chit Funds, and approach Economic Offences Wing (EOW) of police. | SaulGPT Legal Procedure Playbook | 2026-03-10
+Section 5 Chit Funds Act 1982 | Compulsory registration of chit funds and adherence to regulatory requirements. Unregistered chit funds are illegal and promoters can be prosecuted. | India Code - Chit Funds Act 1982 | 1982-08-19
+
+# ===========================
+# RTI (Right to Information)
+# ===========================
+Procedure - RTI Application | Any citizen can file an RTI application to any government/public authority by paying Rs 10 fee (by court fee stamp, DD or cash). Online RTI can be filed at rtionline.gov.in for central government departments. Information must be provided within 30 days. | SaulGPT Legal Procedure Playbook | 2026-03-10
+Procedure - RTI First Appeal | If RTI response is unsatisfactory or not received within 30 days, a First Appeal can be filed with the First Appellate Authority within 30 days of deadline/response. A Second Appeal or complaint can be made to the Information Commission if still unsatisfied. | SaulGPT Legal Procedure Playbook | 2026-03-10
+
+# ===========================
+# PROPERTY REGISTRATION FRAUD
+# ===========================
+Procedure - Fraudulent Property Sale | If someone attempts to sell your property using forged documents, immediately file an FIR for forgery and cheating, apply for a stay on registration with the Sub-Registrar, and file a civil suit for declaration that the transaction is void. | SaulGPT Legal Procedure Playbook | 2026-03-10
+Section 17 Registration Act 1908 | Documents relating to immovable property above Rs 100 must be compulsorily registered. Non-registered documents cannot be used as evidence for property transactions. | India Code - Registration Act 1908 | 1909-01-01
+
+
