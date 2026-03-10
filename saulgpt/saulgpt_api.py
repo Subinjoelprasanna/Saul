@@ -19,14 +19,7 @@ INDEX_FILE = os.path.join(BASE_DIR, "index.html")
 
 app = FastAPI(title="SaulGPT API", version="3.4.0")
 
-ALLOWED_ORIGINS = [
-    origin.strip()
-    for origin in os.getenv(
-        "ALLOWED_ORIGINS",
-        "http://127.0.0.1:5500,http://localhost:5500,null",
-    ).split(",")
-    if origin.strip()
-]
+ALLOWED_ORIGINS = ["*"]
 
 app.add_middleware(
     CORSMiddleware,
@@ -34,6 +27,7 @@ app.add_middleware(
     allow_credentials=False,
     allow_methods=["POST", "GET", "OPTIONS"],
     allow_headers=["Content-Type", "X-API-Key"],
+    expose_headers=["Content-Disposition", "Content-Type"],
 )
 
 OLLAMA_URL = os.getenv("OLLAMA_URL", "http://localhost:11434/api/generate")
@@ -48,9 +42,10 @@ MODEL_CANDIDATES = [
 ]
 if OLLAMA_MODEL not in MODEL_CANDIDATES:
     MODEL_CANDIDATES.insert(0, OLLAMA_MODEL)
-OLLAMA_TIMEOUT_SECONDS = float(os.getenv("OLLAMA_TIMEOUT_SECONDS", "45"))
+OLLAMA_TIMEOUT_SECONDS = float(os.getenv("OLLAMA_TIMEOUT_SECONDS", "180"))
 CHAT_MAX_TOKENS = int(os.getenv("CHAT_MAX_TOKENS", "520"))
 GENERATE_MAX_TOKENS = int(os.getenv("GENERATE_MAX_TOKENS", "900"))
+FORM_MAX_TOKENS = int(os.getenv("FORM_MAX_TOKENS", "1200"))
 REQUESTS_PER_MINUTE = int(os.getenv("REQUESTS_PER_MINUTE", "30"))
 API_KEY = os.getenv("SAULGPT_API_KEY")
 MAX_RETRIES = int(os.getenv("OLLAMA_MAX_RETRIES", "2"))
@@ -175,6 +170,7 @@ class GenerateResponse(BaseModel):
     draft: str
     citations: List[Citation]
     disclaimer: str
+    suggested_form: Optional[str] = None
 
 
 class ChatResponse(BaseModel):
@@ -182,6 +178,7 @@ class ChatResponse(BaseModel):
     citations: List[Citation]
     redirected_to_law: bool
     disclaimer: str
+    suggested_form: Optional[str] = None
 
 
 class IngestFileResult(BaseModel):
@@ -205,6 +202,16 @@ class ReportExportRequest(BaseModel):
     content: str = Field(min_length=1, max_length=20000)
     format: Literal["pdf", "docx"] = "pdf"
     filename: Optional[str] = None
+
+
+class FormGenerationRequest(BaseModel):
+    form_type: str = Field(min_length=2, max_length=120)
+    fields: Dict[str, str]
+
+
+class FormGenerationResponse(BaseModel):
+    document: str
+    disclaimer: str
 
 
 def _normalize_text(value: Any) -> str:
@@ -475,25 +482,52 @@ def _build_pdf_bytes(title: str, content: str) -> bytes:
     canvas = canvas_module.Canvas(buffer, pagesize=pagesizes_module.A4)
     width, height = pagesizes_module.A4
     margin_x, margin_y = 48, 56
+    line_height = 14  # points between lines
+
+    def new_text_obj(y_start: float):
+        obj = canvas.beginText(margin_x, y_start)
+        obj.setFont("Helvetica", 11)
+        return obj
+
     text_obj = canvas.beginText(margin_x, height - margin_y)
     text_obj.setFont("Helvetica-Bold", 14)
     text_obj.textLine(title)
-    text_obj.moveCursor(0, 10)
+    text_obj.moveCursor(0, 8)
     text_obj.setFont("Helvetica", 11)
 
-    max_chars = max(50, int((width - (2 * margin_x)) / 6))
-    for paragraph in content.splitlines():
-        wrapped = [paragraph[i : i + max_chars] for i in range(0, len(paragraph), max_chars)]
-        if not wrapped:
-            wrapped = [""]
-        for line in wrapped:
-            if text_obj.getY() <= margin_y:
-                canvas.drawText(text_obj)
-                canvas.showPage()
-                text_obj = canvas.beginText(margin_x, height - margin_y)
-                text_obj.setFont("Helvetica", 11)
-            text_obj.textLine(line)
-        text_obj.textLine("")
+    max_chars = max(50, int((width - (2 * margin_x)) / 6.2))
+
+    def ensure_space(obj, lines_needed: int = 1):
+        """Returns (possibly new) text object, creating a new page if needed."""
+        if obj.getY() - (lines_needed * line_height) <= margin_y:
+            canvas.drawText(obj)
+            canvas.showPage()
+            obj = new_text_obj(height - margin_y)
+        return obj
+
+    paragraphs = content.split("\n")
+    for i, paragraph in enumerate(paragraphs):
+        text = paragraph.rstrip()
+        if not text:
+            # Empty line = paragraph separator: add one blank line of space
+            text_obj = ensure_space(text_obj, 1)
+            text_obj.textLine("")
+        else:
+            # Wrap long lines, but don't add extra blank lines between wrapped lines
+            words = text.split(" ")
+            current_line = ""
+            for word in words:
+                if len(current_line) + len(word) + 1 <= max_chars:
+                    current_line += ("" if not current_line else " ") + word
+                else:
+                    if current_line:
+                        text_obj = ensure_space(text_obj)
+                        text_obj.textLine(current_line)
+                    current_line = word
+            if current_line:
+                text_obj = ensure_space(text_obj)
+                text_obj.textLine(current_line)
+
     canvas.drawText(text_obj)
     canvas.save()
     return buffer.getvalue()
@@ -718,6 +752,28 @@ def _disclaimer() -> str:
     )
 
 
+def _detect_suggested_form(text: str) -> Optional[str]:
+    """Detects if a user is likely asking for a specific legal form."""
+    text = text.lower()
+    mapping = {
+        "Consumer Complaint Form": ["consumer complaint", "defective", "poor service", "refund", "seller"],
+        "FIR Complaint Draft": ["fir", "first information report", "police complaint", "crime", "robbery", "theft"],
+        "Legal Notice": ["legal notice", "demand notice", "before legal action"],
+        "Affidavit": ["affidavit", "sworn statement", "deponent"],
+        "Property Dispute Complaint": ["property dispute", "land ownership", "property ownership"],
+        "Rental Agreement Draft": ["rental agreement", "lease agreement", "landlord", "tenant"],
+        "Police Complaint (Non-FIR)": ["harassment", "nuisance", "non-cognizable", "complaint to police"],
+        "Legal Heir Certificate Application": ["legal heir", "death certificate", "deceased person"],
+        "Land Encroachment Complaint": ["encroachment", "illegal occupation", "land grab"],
+        "RTI Application": ["rti", "right to information", "public authority"]
+    }
+    
+    for form_name, keywords in mapping.items():
+        if any(kw in text for kw in keywords):
+            return form_name
+    return None
+
+
 @app.get("/")
 def home() -> FileResponse:
     return FileResponse(INDEX_FILE)
@@ -740,12 +796,18 @@ def generate(data: CaseRequest, request: Request, x_api_key: Optional[str] = Hea
 
     query = f"{data.case_type} {data.incident} {data.amount or ''}".strip()
     retrieval = search_knowledge(query, top_k=7)
-    draft = _build_information_reply(query, retrieval)
+    
+    prompt = _build_generate_prompt(data, retrieval)
+    try:
+        draft = _call_ollama_text(prompt, num_predict=GENERATE_MAX_TOKENS)
+    except Exception:
+        draft = _build_information_reply(query, retrieval)
 
     return GenerateResponse(
         draft=_clean_reply(draft),
-        citations=[],
+        citations=retrieval,
         disclaimer=_disclaimer(),
+        suggested_form=_detect_suggested_form(query + " " + draft)
     )
 
 
@@ -759,16 +821,19 @@ def chat(data: ChatRequest, request: Request, x_api_key: Optional[str] = Header(
     if cached:
         return cached
 
+    redirected = False
     if not _is_law_topic(data.message):
+        reply_content = (
+            f"{LAW_FOCUS_GUIDANCE} "
+            "You can ask things like: 'What type of legal issue is this?', "
+            "'What is the general legal context?', or 'What documents should I gather?'"
+        )
         response = ChatResponse(
-            reply=(
-                f"{LAW_FOCUS_GUIDANCE} "
-                "You can ask things like: 'What type of legal issue is this?', "
-                "'What is the general legal context?', or 'What documents should I gather?'"
-            ),
+            reply=reply_content,
             citations=[],
             redirected_to_law=True,
             disclaimer=_disclaimer(),
+            suggested_form=None,
         )
         _set_cached_chat(data.message, data.history, response)
         return response
@@ -778,13 +843,20 @@ def chat(data: ChatRequest, request: Request, x_api_key: Optional[str] = Header(
     )
     retrieval_query = f"{user_history_context} {data.message}".strip()
     retrieval = search_knowledge(retrieval_query, top_k=7)
-    reply = _build_information_reply(data.message, retrieval)
+    
+    prompt = _chat_prompt(data.message, data.history, retrieval)
+    try:
+        reply = _call_ollama_text(prompt, num_predict=CHAT_MAX_TOKENS)
+    except Exception:
+        reply = _build_information_reply(data.message, retrieval)
 
+    reply = _finalize_chat_reply(data.message, reply)
     response = ChatResponse(
-        reply=_finalize_chat_reply(data.message, reply),
-        citations=[],
-        redirected_to_law=False,
+        reply=reply,
+        citations=retrieval,
+        redirected_to_law=redirected,
         disclaimer=_disclaimer(),
+        suggested_form=_detect_suggested_form(data.message + " " + reply)
     )
     _set_cached_chat(data.message, data.history, response)
     return response
@@ -906,4 +978,48 @@ def export_report(
         content=payload,
         media_type=media_type,
         headers={"Content-Disposition": f'attachment; filename="{filename}"'},
+    )
+
+
+@app.post("/generate-form", response_model=FormGenerationResponse)
+@app.post("/api/generate-form", response_model=FormGenerationResponse)
+def generate_form(
+    data: FormGenerationRequest,
+    request: Request,
+    x_api_key: Optional[str] = Header(default=None),
+) -> FormGenerationResponse:
+    _check_api_key(x_api_key)
+    client_id = request.client.host if request.client else "unknown"
+    _check_rate_limit(client_id)
+
+    # Build a human-readable fields block
+    fields_block = "\n".join(
+        f"- {key}: {value}" for key, value in data.fields.items() if value.strip()
+    )
+
+    prompt = f"""You are SaulGPT, an expert Indian legal document drafter.
+Write a complete, formal {data.form_type} as a plain text document.
+
+Details provided by the user:
+{fields_block}
+
+Rules:
+- Use ONLY the details listed above. Do NOT mention, guess, or use placeholders for any information not listed above.
+- Never write things like "[age not provided]", "not known", "[Your Signature]" or any placeholder text.
+- If a detail was not given, simply omit that sentence or clause entirely — do not reference missing info at all.
+- Write in plain text. No markdown, no bold (**text**), no headers like "**Heading**" or "**Body Paragraphs**", no bullet points.
+- Write the document directly — start with the recipient address, then subject, then the body. Do not label sections.
+- Use formal Indian legal language. Write complete sentences.
+- End with a declaration paragraph and a signature block (name, address, phone if provided, date).
+
+Write the complete {data.form_type} now:""".strip()
+
+    try:
+        document = _call_ollama_text(prompt, num_predict=FORM_MAX_TOKENS)
+    except Exception as exc:
+        raise HTTPException(status_code=502, detail=f"Form generation failed: {exc}") from exc
+
+    return FormGenerationResponse(
+        document=document,
+        disclaimer=_disclaimer(),
     )

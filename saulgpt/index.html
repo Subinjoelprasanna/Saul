@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -19,7 +20,9 @@
       --danger: #b42318;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
     body {
       margin: 0;
@@ -51,11 +54,27 @@
       background: #fbfcff;
     }
 
-    .brand { margin: 0 0 6px; font-size: 1.35rem; }
-    .subtitle { margin: 0; color: var(--muted); font-size: 0.92rem; line-height: 1.4; }
+    .brand {
+      margin: 0 0 6px;
+      font-size: 1.35rem;
+    }
 
-    .quick { margin-top: 18px; }
-    .quick h3 { margin: 0 0 10px; font-size: 0.95rem; }
+    .subtitle {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.4;
+    }
+
+    .quick {
+      margin-top: 18px;
+    }
+
+    .quick h3 {
+      margin: 0 0 10px;
+      font-size: 0.95rem;
+    }
+
     .quick button {
       width: 100%;
       text-align: left;
@@ -67,7 +86,11 @@
       cursor: pointer;
       color: var(--text);
     }
-    .quick button:hover { border-color: #bac7e6; background: #f7faff; }
+
+    .quick button:hover {
+      border-color: #bac7e6;
+      background: #f7faff;
+    }
 
     .disclaimer {
       margin-top: 18px;
@@ -80,7 +103,11 @@
       line-height: 1.4;
     }
 
-    .main { display: grid; grid-template-rows: auto 1fr auto; min-height: 0; }
+    .main {
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      min-height: 0;
+    }
 
     .topbar {
       padding: 14px 18px;
@@ -91,10 +118,30 @@
       background: #fff;
     }
 
-    .topbar h2 { margin: 0; font-size: 1rem; font-weight: 700; }
-    .status { color: var(--muted); font-size: 0.9rem; min-height: 18px; }
-    .top-meta { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
-    .top-actions { display: flex; gap: 8px; }
+    .topbar h2 {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .status {
+      color: var(--muted);
+      font-size: 0.9rem;
+      min-height: 18px;
+    }
+
+    .top-meta {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 4px;
+    }
+
+    .top-actions {
+      display: flex;
+      gap: 8px;
+    }
+
     .export-btn {
       border: 1px solid var(--border);
       border-radius: 8px;
@@ -104,9 +151,17 @@
       font-size: 0.85rem;
       cursor: pointer;
     }
-    .export-btn:hover { border-color: #b9c5df; background: #f7faff; }
 
-    .messages { padding: 18px; overflow-y: auto; background: #f9fbff; }
+    .export-btn:hover {
+      border-color: #b9c5df;
+      background: #f7faff;
+    }
+
+    .messages {
+      padding: 18px;
+      overflow-y: auto;
+      background: #f9fbff;
+    }
 
     .message {
       max-width: 86%;
@@ -118,9 +173,21 @@
       line-height: 1.5;
     }
 
-    .message.user { margin-left: auto; background: var(--user); border-color: #c9dafc; }
-    .message.assistant { background: var(--assistant); }
-    .message.notice { background: var(--warn-bg); border-color: #ffd7ab; color: var(--warn); }
+    .message.user {
+      margin-left: auto;
+      background: var(--user);
+      border-color: #c9dafc;
+    }
+
+    .message.assistant {
+      background: var(--assistant);
+    }
+
+    .message.notice {
+      background: var(--warn-bg);
+      border-color: #ffd7ab;
+      color: var(--warn);
+    }
 
     .meta {
       font-size: 0.8rem;
@@ -165,7 +232,9 @@
       color: #273149;
     }
 
-    .ref-panel.open { display: block; }
+    .ref-panel.open {
+      display: block;
+    }
 
     .ref-heading {
       font-weight: 700;
@@ -182,14 +251,22 @@
       line-height: 1.35;
     }
 
-    .composer { padding: 12px 14px; border-top: 1px solid var(--border); background: #fff; }
+    .composer {
+      padding: 12px 14px;
+      border-top: 1px solid var(--border);
+      background: #fff;
+    }
+
     .composer form {
       display: grid;
       grid-template-columns: auto 1fr auto;
       gap: 10px;
       align-items: end;
     }
-    .hidden-file-input { display: none; }
+
+    .hidden-file-input {
+      display: none;
+    }
 
     .attach-col {
       display: flex;
@@ -236,7 +313,11 @@
       font: inherit;
     }
 
-    .actions { display: flex; flex-direction: column; gap: 8px; }
+    .actions {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
 
     button.send {
       border: 0;
@@ -257,40 +338,459 @@
       cursor: pointer;
     }
 
-    button:disabled { opacity: 0.6; cursor: not-allowed; }
+    button:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
 
-    .error { color: var(--danger); font-size: 0.9rem; margin-top: 8px; min-height: 20px; }
+    .error {
+      color: var(--danger);
+      font-size: 0.9rem;
+      margin-top: 8px;
+      min-height: 20px;
+    }
+
+    /* ── Form Filling Button ── */
+    .form-filling-section {
+      margin-top: 18px;
+    }
+
+    .form-filling-section h3 {
+      margin: 0 0 10px;
+      font-size: 0.95rem;
+    }
+
+    .form-filling-btn {
+      width: 100%;
+      text-align: left;
+      padding: 11px 14px;
+      border: 2px solid #0f62fe;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #0f62fe 0%, #0043a8 100%);
+      color: #fff;
+      font-size: 0.92rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: opacity 0.2s;
+    }
+
+    .form-filling-btn:hover {
+      opacity: 0.88;
+    }
+
+    .form-filling-btn .ff-icon {
+      font-size: 1.1rem;
+    }
+
+    /* ── Modal Overlay ── */
+    .ff-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(10, 20, 60, 0.55);
+      backdrop-filter: blur(4px);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .ff-overlay.open {
+      display: flex;
+    }
+
+    .ff-modal {
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 24px 60px rgba(10, 25, 70, 0.22);
+      width: min(94vw, 820px);
+      max-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .ff-header {
+      padding: 18px 22px 14px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .ff-header h2 {
+      margin: 0;
+      font-size: 1.1rem;
+      color: #192235;
+    }
+
+    .ff-close-btn {
+      background: none;
+      border: none;
+      font-size: 1.4rem;
+      cursor: pointer;
+      color: var(--muted);
+      line-height: 1;
+      padding: 2px 6px;
+    }
+
+    .ff-close-btn:hover {
+      color: var(--text);
+    }
+
+    .ff-stage {
+      display: none;
+      flex: 1;
+      overflow-y: auto;
+      padding: 20px 22px;
+    }
+
+    .ff-stage.active {
+      display: block;
+    }
+
+    /* Stage 1 – Form Cards Grid */
+    .ff-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 12px;
+    }
+
+    .ff-card {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px;
+      cursor: pointer;
+      background: #fbfcff;
+      transition: border-color 0.18s, background 0.18s, transform 0.15s;
+    }
+
+    .ff-card:hover {
+      border-color: #0f62fe;
+      background: #edf2ff;
+      transform: translateY(-2px);
+    }
+
+    .ff-card-icon {
+      font-size: 1.6rem;
+      margin-bottom: 6px;
+    }
+
+    .ff-card-title {
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-bottom: 4px;
+      color: #192235;
+    }
+
+    .ff-card-desc {
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.35;
+    }
+
+    /* Stage 2 – Input Form */
+    .ff-back-btn {
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 6px 12px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .ff-back-btn:hover {
+      border-color: #aebddd;
+      color: var(--text);
+    }
+
+    .ff-form-title {
+      font-size: 1rem;
+      font-weight: 700;
+      margin: 0 0 4px;
+      color: #192235;
+    }
+
+    .ff-form-desc {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin: 0 0 16px;
+    }
+
+    .ff-field {
+      margin-bottom: 12px;
+    }
+
+    .ff-field label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: #2e3a52;
+    }
+
+    .ff-field input,
+    .ff-field textarea,
+    .ff-field select {
+      width: 100%;
+      padding: 9px 11px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font: inherit;
+      font-size: 0.88rem;
+      background: #fafbff;
+      outline: none;
+      transition: border-color 0.18s;
+    }
+
+    .ff-field input:focus,
+    .ff-field textarea:focus {
+      border-color: #0f62fe;
+    }
+
+    .ff-field textarea {
+      min-height: 70px;
+      resize: vertical;
+    }
+
+    .ff-submit-btn {
+      width: 100%;
+      margin-top: 6px;
+      padding: 12px;
+      background: linear-gradient(135deg, #0f62fe 0%, #0043a8 100%);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+
+    .ff-submit-btn:hover {
+      opacity: 0.88;
+    }
+
+    .ff-submit-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .ff-form-error {
+      color: var(--danger);
+      font-size: 0.85rem;
+      margin-top: 8px;
+    }
+
+    /* Stage 3 – Output */
+    .ff-output-actions {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+
+    .ff-output-btn {
+      padding: 8px 14px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: #fff;
+      font-size: 0.85rem;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .ff-output-btn:hover {
+      border-color: #0f62fe;
+      color: #0f62fe;
+    }
+
+    .ff-output-btn.primary {
+      background: #0f62fe;
+      color: #fff;
+      border-color: #0f62fe;
+    }
+
+    .ff-output-btn.primary:hover {
+      opacity: 0.85;
+    }
+
+    .ff-output-box {
+      background: #f7f9ff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 18px;
+      white-space: pre-wrap;
+      font-size: 0.88rem;
+      line-height: 1.65;
+      color: #1a2540;
+      min-height: 200px;
+      max-height: 52vh;
+      overflow-y: auto;
+    }
+
+    .ff-disclaimer {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 10px;
+      padding: 8px 10px;
+      background: #fff4e6;
+      border-radius: 8px;
+    }
 
     @media (max-width: 920px) {
-      .app { grid-template-columns: 1fr; height: auto; }
-      .sidebar { border-right: 0; border-bottom: 1px solid var(--border); }
-      .main { min-height: 70vh; }
+      .app {
+        grid-template-columns: 1fr;
+        height: auto;
+      }
+
+      .sidebar {
+        border-right: 0;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .main {
+        min-height: 70vh;
+      }
+
       .composer form {
         grid-template-columns: auto 1fr;
       }
+
       .actions {
         grid-column: 1 / -1;
         flex-direction: row;
       }
     }
+
+    /* Form Suggestion Chip */
+    .ff-suggestion-card {
+      margin-top: 12px;
+      padding: 12px;
+      background: rgba(var(--brand-rgb, 100, 108, 255), 0.08);
+      border: 1px solid rgba(var(--brand-rgb, 100, 108, 255), 0.2);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      animation: fadeIn 0.4s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(5px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .ff-suggestion-card:hover {
+      background: rgba(var(--brand-rgb, 100, 108, 255), 0.12);
+      border-color: rgba(var(--brand-rgb, 100, 108, 255), 0.4);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .ff-suggestion-icon {
+      font-size: 1.4rem;
+    }
+
+    .ff-suggestion-text {
+      flex: 1;
+      font-size: 0.9rem;
+      color: var(--text-main);
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    .ff-suggestion-action {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--brand);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
   </style>
 </head>
+
 <body>
   <div class="app">
     <aside class="sidebar">
       <h1 class="brand">SaulGPT</h1>
-      <p class="subtitle">Ask law-related questions for general legal understanding, issue categorization, and document-check guidance.</p>
+      <p class="subtitle">Ask law-related questions for general legal understanding, issue categorization, and
+        document-check guidance.</p>
 
       <div class="quick">
         <h3>Quick prompts</h3>
-        <button onclick="insertPrompt('My landlord is refusing to return deposit after I vacated. What type of legal issue is this?')">Identify legal category</button>
-        <button onclick="insertPrompt('Explain the general legal context of an online payment fraud in India.')">Explain legal context</button>
-        <button onclick="insertPrompt('What documents should I gather for an employment salary dispute?')">Document checklist</button>
+        <button
+          onclick="insertPrompt('My landlord is refusing to return deposit after I vacated. What type of legal issue is this?')">Identify
+          legal category</button>
+        <button onclick="insertPrompt('Explain the general legal context of an online payment fraud in India.')">Explain
+          legal context</button>
+        <button onclick="insertPrompt('What documents should I gather for an employment salary dispute?')">Document
+          checklist</button>
       </div>
 
-      <div id="disclaimer" class="disclaimer">SaulGPT provides legal information only, not legal advice. Consult a qualified lawyer for case-specific action.</div>
+      <!-- Form Filling Section -->
+      <div class="form-filling-section">
+        <h3>Form Filling</h3>
+        <button class="form-filling-btn" onclick="openFormModal()">
+          <span class="ff-icon">📋</span> Generate Legal Forms
+        </button>
+      </div>
+
+      <div id="disclaimer" class="disclaimer">SaulGPT provides legal information only, not legal advice. Consult a
+        qualified lawyer for case-specific action.</div>
 
     </aside>
+
+    <!-- ═══════════════ FORM FILLING MODAL ═══════════════ -->
+    <div id="ffOverlay" class="ff-overlay" onclick="handleOverlayClick(event)">
+      <div class="ff-modal">
+        <div class="ff-header">
+          <h2 id="ffModalTitle">Select a Legal Form</h2>
+          <button class="ff-close-btn" onclick="closeFormModal()" aria-label="Close">✕</button>
+        </div>
+
+        <!-- Stage 1: Form Selection Grid -->
+        <div id="ffStage1" class="ff-stage active">
+          <div class="ff-grid" id="ffFormGrid"></div>
+        </div>
+
+        <!-- Stage 2: Input Fields -->
+        <div id="ffStage2" class="ff-stage">
+          <button class="ff-back-btn" onclick="goToStage1()">← Back to forms</button>
+          <div class="ff-form-title" id="ffInputTitle"></div>
+          <div class="ff-form-desc" id="ffInputDesc"></div>
+          <div id="ffFieldsContainer"></div>
+          <div class="ff-form-error" id="ffFormError"></div>
+          <button class="ff-submit-btn" id="ffSubmitBtn" onclick="submitFormFilling()">✨ Generate Form</button>
+        </div>
+
+        <!-- Stage 3: Generated Output -->
+        <div id="ffStage3" class="ff-stage">
+          <button class="ff-back-btn" onclick="goToStage2()">← Edit details</button>
+          <div class="ff-output-actions">
+            <button class="ff-output-btn primary" onclick="copyFormOutput()">📋 Copy Text</button>
+            <button class="ff-output-btn" onclick="exportFormOutput('pdf')">⬇ Export PDF</button>
+            <button class="ff-output-btn" onclick="exportFormOutput('docx')">⬇ Export DOCX</button>
+            <button class="ff-output-btn" onclick="startNewForm()">🔄 New Form</button>
+          </div>
+          <div class="ff-output-box" id="ffOutputBox"></div>
+          <div class="ff-disclaimer" id="ffOutputDisclaimer"></div>
+        </div>
+      </div>
+    </div>
 
     <main class="main">
       <div class="topbar">
@@ -308,9 +808,11 @@
 
       <div class="composer">
         <form onsubmit="sendMessage(event)">
-          <input id="docFiles" class="hidden-file-input" type="file" accept=".pdf,.docx,.txt" multiple onchange="handleFilePick(event)" />
+          <input id="docFiles" class="hidden-file-input" type="file" accept=".pdf,.docx,.txt" multiple
+            onchange="handleFilePick(event)" />
           <div class="attach-col">
-            <button class="attach-btn" type="button" title="Upload documents" aria-label="Upload documents" onclick="openFilePicker()">+</button>
+            <button class="attach-btn" type="button" title="Upload documents" aria-label="Upload documents"
+              onclick="openFilePicker()">+</button>
           </div>
           <textarea id="input" placeholder="Describe your case facts or ask any law-related question..."></textarea>
           <div class="actions">
@@ -341,13 +843,12 @@
         add(window.SAULGPT_API_BASE_URL);
       }
 
-      if (window.location.protocol === "file:") {
-        add("http://127.0.0.1:8000");
-        add("http://localhost:8000");
-      } else {
+      // Prioritize the backend API port 8001
+      add("http://127.0.0.1:8001");
+      add("http://localhost:8001");
+
+      if (window.location.protocol !== "file:") {
         add(window.location.origin);
-        add(`${window.location.protocol}//127.0.0.1:8000`);
-        add(`${window.location.protocol}//localhost:8000`);
       }
 
       return bases;
@@ -366,7 +867,7 @@
     const docFilesEl = document.getElementById("docFiles");
     let lastAssistantReply = "";
 
-    function addMessage(role, content, mode = "normal") {
+    function addMessage(role, content, suggestedForm = null, mode = "normal") {
       const wrapper = document.createElement("div");
       wrapper.className = `message ${role} ${mode === "notice" ? "notice" : ""}`.trim();
 
@@ -379,6 +880,20 @@
 
       wrapper.appendChild(meta);
       wrapper.appendChild(body);
+
+      if (suggestedForm && FORM_DEFINITIONS[suggestedForm]) {
+        const form = FORM_DEFINITIONS[suggestedForm];
+        const chip = document.createElement("div");
+        chip.className = "ff-suggestion-card";
+        chip.onclick = () => openSpecificForm(suggestedForm);
+        chip.innerHTML = `
+          <div class="ff-suggestion-icon">${form.icon}</div>
+          <div class="ff-suggestion-text">Need to fill this out? Start the <strong>${suggestedForm}</strong></div>
+          <div class="ff-suggestion-action">Open Form →</div>
+        `;
+        wrapper.appendChild(chip);
+      }
+
       messagesEl.appendChild(wrapper);
       messagesEl.scrollTop = messagesEl.scrollHeight;
       if (role === "assistant" && mode !== "notice") {
@@ -480,7 +995,8 @@
           tried.push(endpoint);
           try {
             const response = await fetch(endpoint, options);
-            if (response.status === 404) {
+            // If the server doesn't support the relative path or method, try next base
+            if (response.status === 404 || response.status === 501) {
               continue;
             }
             return response;
@@ -588,7 +1104,7 @@
         const failed = Number(data.failed_files || 0);
         const chunks = Number(data.total_chunks || 0);
         attachStatusEl.textContent = `Indexed ${ingested} file(s), ${chunks} chunk(s).${failed ? ` Failed: ${failed}.` : ""}`;
-        addMessage("assistant", `Indexed ${ingested} uploaded document(s) into the knowledge base. You can now ask questions using those facts.`);
+        addMessage("assistant", `Indexed ${ingested} uploaded document(s) into the knowledge base. You can now ask questions using those facts.`, data.suggested_form);
         docFilesEl.value = "";
       } catch (err) {
         attachStatusEl.textContent = "";
@@ -702,7 +1218,7 @@
           };
         }
 
-        const assistantMessage = addMessage("assistant", data.reply, data.redirected_to_law ? "notice" : "normal");
+        const assistantMessage = addMessage("assistant", data.reply, data.suggested_form, data.redirected_to_law ? "notice" : "normal");
         history.push({ role: "assistant", content: data.reply });
         attachReferencesToMessage(assistantMessage, data.citations || []);
 
@@ -718,6 +1234,447 @@
     }
 
     clearChat();
+
+    /* ═══════════════════════════════════════════════════════
+       FORM FILLING FEATURE
+       ═══════════════════════════════════════════════════════ */
+
+    const FORM_DEFINITIONS = {
+      "Consumer Complaint Form": {
+        icon: "🛒",
+        desc: "Complain about a defective product or poor service.",
+        fields: [
+          { id: "fullName", label: "Your Full Name", type: "text", required: true },
+          { id: "address", label: "Your Full Address (Street, Area)", type: "textarea", required: true },
+          { id: "city", label: "Your City", type: "text", required: true },
+          { id: "state", label: "Your State", type: "text", required: true },
+          { id: "pincode", label: "PIN Code", type: "text", required: false },
+          { id: "phone", label: "Phone Number", type: "text", required: true },
+          { id: "email", label: "Email Address", type: "text", required: false },
+          { id: "companyName", label: "Company / Seller Name", type: "text", required: true },
+          { id: "companyCity", label: "Company's City / Location", type: "text", required: true },
+          { id: "storeName", label: "Store / Platform Where Purchased (e.g. Amazon, Local Shop)", type: "text", required: true },
+          { id: "productName", label: "Product / Service Name", type: "text", required: true },
+          { id: "purchaseDate", label: "Date of Purchase", type: "text", required: true },
+          { id: "purchaseAmount", label: "Amount Paid (₹)", type: "text", required: false },
+          { id: "description", label: "Description of Problem", type: "textarea", required: true },
+          { id: "compensation", label: "Compensation Requested", type: "text", required: true },
+          { id: "complaintDate", label: "Date of This Complaint", type: "text", required: true },
+        ]
+      },
+      "FIR Complaint Draft": {
+        icon: "🚔",
+        desc: "Report a crime to the police (First Information Report).",
+        fields: [
+          { id: "fullName", label: "Your Full Name", type: "text", required: true },
+          { id: "address", label: "Your Full Address", type: "textarea", required: true },
+          { id: "city", label: "Your City", type: "text", required: true },
+          { id: "state", label: "Your State", type: "text", required: true },
+          { id: "phone", label: "Phone Number", type: "text", required: false },
+          { id: "policeStation", label: "Police Station Name", type: "text", required: true },
+          { id: "policeCity", label: "Police Station City / District", type: "text", required: true },
+          { id: "incidentDate", label: "Date of Incident", type: "text", required: true },
+          { id: "incidentTime", label: "Approximate Time of Incident", type: "text", required: false },
+          { id: "location", label: "Exact Location / Address of Incident", type: "textarea", required: true },
+          { id: "description", label: "Detailed Description of Incident", type: "textarea", required: true },
+          { id: "suspectInfo", label: "Suspect Name / Description (if known)", type: "textarea", required: false },
+          { id: "witnesses", label: "Witnesses (if any)", type: "textarea", required: false },
+          { id: "lostItems", label: "Items Lost / Property Damaged", type: "textarea", required: false },
+          { id: "complaintDate", label: "Date of Filing Complaint", type: "text", required: true },
+        ]
+      },
+      "Legal Notice": {
+        icon: "⚖️",
+        desc: "Formally notify a person or company before taking legal action.",
+        fields: [
+          { id: "senderName", label: "Sender Full Name", type: "text", required: true },
+          { id: "senderAddress", label: "Sender Full Address", type: "textarea", required: true },
+          { id: "senderCity", label: "Sender City", type: "text", required: true },
+          { id: "senderState", label: "Sender State", type: "text", required: true },
+          { id: "senderPhone", label: "Sender Phone / Email", type: "text", required: false },
+          { id: "receiverName", label: "Receiver Full Name / Organisation", type: "text", required: true },
+          { id: "receiverAddress", label: "Receiver Full Address", type: "textarea", required: true },
+          { id: "receiverCity", label: "Receiver City", type: "text", required: true },
+          { id: "subject", label: "Subject of Dispute", type: "text", required: true },
+          { id: "details", label: "Full Details of the Dispute", type: "textarea", required: true },
+          { id: "demand", label: "Demand / Action Required", type: "textarea", required: true },
+          { id: "deadline", label: "Response Deadline (e.g. 15 days from date)", type: "text", required: true },
+          { id: "noticeDate", label: "Date of Notice", type: "text", required: true },
+        ]
+      },
+      "Affidavit": {
+        icon: "📜",
+        desc: "A sworn written statement used in legal proceedings.",
+        fields: [
+          { id: "fullName", label: "Full Name of Deponent", type: "text", required: true },
+          { id: "age", label: "Age", type: "text", required: true },
+          { id: "fatherName", label: "Father's / Spouse's Name", type: "text", required: false },
+          { id: "address", label: "Full Residential Address", type: "textarea", required: true },
+          { id: "city", label: "City", type: "text", required: true },
+          { id: "state", label: "State", type: "text", required: true },
+          { id: "occupation", label: "Occupation", type: "text", required: false },
+          { id: "facts", label: "Statement of Facts (detailed)", type: "textarea", required: true },
+          { id: "purpose", label: "Purpose / Use of this Affidavit", type: "text", required: true },
+          { id: "affidavitDate", label: "Date of Affidavit", type: "text", required: true },
+          { id: "place", label: "Place of Execution (City)", type: "text", required: true },
+        ]
+      },
+      "Property Dispute Complaint": {
+        icon: "🏡",
+        desc: "Dispute over land or property ownership.",
+        fields: [
+          { id: "ownerName", label: "Complainant Full Name", type: "text", required: true },
+          { id: "ownerAddress", label: "Complainant Full Address", type: "textarea", required: true },
+          { id: "ownerCity", label: "Complainant City", type: "text", required: true },
+          { id: "ownerState", label: "Complainant State", type: "text", required: true },
+          { id: "phone", label: "Phone Number", type: "text", required: false },
+          { id: "authorityName", label: "Filed To (Court / Authority Name)", type: "text", required: true },
+          { id: "authorityCity", label: "Court / Authority City", type: "text", required: true },
+          { id: "propertyLoc", label: "Property Full Address / Survey No.", type: "textarea", required: true },
+          { id: "disputeNature", label: "Nature of Dispute", type: "textarea", required: true },
+          { id: "opposingParty", label: "Opposing Party Name + Address", type: "textarea", required: true },
+          { id: "evidence", label: "Evidence Available (documents etc.)", type: "textarea", required: false },
+          { id: "reliefSought", label: "Relief / Action Requested", type: "textarea", required: true },
+          { id: "complaintDate", label: "Date of Complaint", type: "text", required: true },
+        ]
+      },
+      "Rental Agreement Draft": {
+        icon: "🔑",
+        desc: "Agreement between landlord and tenant for renting property.",
+        fields: [
+          { id: "landlordName", label: "Landlord Full Name", type: "text", required: true },
+          { id: "landlordAddr", label: "Landlord Full Address", type: "textarea", required: true },
+          { id: "landlordCity", label: "Landlord City", type: "text", required: true },
+          { id: "tenantName", label: "Tenant Full Name", type: "text", required: true },
+          { id: "tenantAddr", label: "Tenant Full Address", type: "textarea", required: true },
+          { id: "tenantCity", label: "Tenant City", type: "text", required: true },
+          { id: "propertyAddr", label: "Property Full Address", type: "textarea", required: true },
+          { id: "propertyCity", label: "Property City / Locality", type: "text", required: true },
+          { id: "rentAmount", label: "Monthly Rent Amount (₹)", type: "text", required: true },
+          { id: "duration", label: "Duration of Agreement (e.g. 11 months)", type: "text", required: true },
+          { id: "startDate", label: "Agreement Start Date", type: "text", required: true },
+          { id: "deposit", label: "Security Deposit Amount (₹)", type: "text", required: true },
+          { id: "terms", label: "Additional Terms / Conditions", type: "textarea", required: false },
+          { id: "agreementDate", label: "Date of Agreement", type: "text", required: true },
+        ]
+      },
+      "Police Complaint (Non-FIR)": {
+        icon: "👮",
+        desc: "Report non-cognizable issues like harassment or nuisance.",
+        fields: [
+          { id: "fullName", label: "Complainant Full Name", type: "text", required: true },
+          { id: "address", label: "Complainant Full Address", type: "textarea", required: true },
+          { id: "city", label: "Complainant City", type: "text", required: true },
+          { id: "state", label: "Complainant State", type: "text", required: true },
+          { id: "phone", label: "Phone Number", type: "text", required: false },
+          { id: "policeStation", label: "Police Station Name", type: "text", required: true },
+          { id: "policeCity", label: "Police Station City / District", type: "text", required: true },
+          { id: "incidentDesc", label: "Full Incident Details", type: "textarea", required: true },
+          { id: "location", label: "Location Where Incident Occurred", type: "textarea", required: true },
+          { id: "incidentDate", label: "Date of Incident", type: "text", required: true },
+          { id: "accused", label: "Accused Name / Address / Details", type: "textarea", required: false },
+          { id: "evidence", label: "Evidence (photos, witnesses etc.)", type: "textarea", required: false },
+          { id: "reliefSought", label: "Action / Relief Requested", type: "textarea", required: true },
+          { id: "complaintDate", label: "Date of Complaint", type: "text", required: true },
+        ]
+      },
+      "Legal Heir Certificate Application": {
+        icon: "👨‍👩‍👧",
+        desc: "Identify legal heirs after someone's death.",
+        fields: [
+          { id: "authorityName", label: "To: (Authority Name, e.g. Tehsildar / Revenue Officer)", type: "text", required: true },
+          { id: "authorityCity", label: "Authority City / Taluk / District", type: "text", required: true },
+          { id: "deceasedName", label: "Deceased Person's Full Name", type: "text", required: true },
+          { id: "deceasedDate", label: "Date of Death", type: "text", required: true },
+          { id: "deceasedAddr", label: "Deceased's Last Known Full Address", type: "textarea", required: true },
+          { id: "applicantName", label: "Applicant Full Name", type: "text", required: true },
+          { id: "applicantAddr", label: "Applicant Full Address", type: "textarea", required: true },
+          { id: "applicantCity", label: "Applicant City / State", type: "text", required: true },
+          { id: "relation", label: "Applicant's Relationship to Deceased", type: "text", required: true },
+          { id: "heirsList", label: "All Legal Heirs (Name, Age, Relationship each on new line)", type: "textarea", required: true },
+          { id: "purpose", label: "Purpose of Certificate (e.g. property/pension/bank)", type: "text", required: true },
+          { id: "appDate", label: "Date of Application", type: "text", required: true },
+        ]
+      },
+      "Land Encroachment Complaint": {
+        icon: "🗺️",
+        desc: "Complaint when someone illegally occupies your land.",
+        fields: [
+          { id: "ownerName", label: "Land Owner Full Name", type: "text", required: true },
+          { id: "ownerAddress", label: "Owner Full Address", type: "textarea", required: true },
+          { id: "ownerCity", label: "Owner City / District", type: "text", required: true },
+          { id: "ownerState", label: "Owner State", type: "text", required: true },
+          { id: "phone", label: "Phone Number", type: "text", required: false },
+          { id: "authorityName", label: "Filed To (e.g. Tahsildar / Collector / Court)", type: "text", required: true },
+          { id: "authorityCity", label: "Authority City / District", type: "text", required: true },
+          { id: "propertyDetails", label: "Property Full Address / Survey / Khasra No.", type: "textarea", required: true },
+          { id: "encroachDesc", label: "Description of Encroachment", type: "textarea", required: true },
+          { id: "encroachName", label: "Encroacher Name + Address", type: "textarea", required: false },
+          { id: "encroachDate", label: "Date When Encroachment Started", type: "text", required: false },
+          { id: "evidence", label: "Evidence Available (documents, photos)", type: "textarea", required: false },
+          { id: "reliefSought", label: "Relief / Action Requested", type: "textarea", required: true },
+          { id: "complaintDate", label: "Date of Complaint", type: "text", required: true },
+        ]
+      },
+      "RTI Application": {
+        icon: "📂",
+        desc: "Request information from a government authority (Right to Information Act).",
+        fields: [
+          { id: "applicantName", label: "Applicant Full Name", type: "text", required: true },
+          { id: "applicantAddr", label: "Applicant Full Address", type: "textarea", required: true },
+          { id: "applicantCity", label: "Applicant City", type: "text", required: true },
+          { id: "applicantState", label: "Applicant State", type: "text", required: true },
+          { id: "phone", label: "Phone Number", type: "text", required: false },
+          { id: "email", label: "Email Address", type: "text", required: false },
+          { id: "authorityName", label: "Name of Public Authority / Office", type: "text", required: true },
+          { id: "authorityCity", label: "City / Location of the Authority", type: "text", required: true },
+          { id: "deptName", label: "Department / Ministry Name", type: "text", required: false },
+          { id: "infoRequested", label: "Information Requested (be specific and complete)", type: "textarea", required: true },
+          { id: "period", label: "Time Period of Information (if applicable)", type: "text", required: false },
+          { id: "feeEnclosed", label: "Fee Enclosed (₹10 postal order / court fee stamp)", type: "text", required: false },
+          { id: "appDate", label: "Date of Application", type: "text", required: true },
+        ]
+      }
+    };
+
+    let ffSelectedFormKey = null;
+    let ffLastGeneratedText = "";
+    let ffLastFormTitle = "";
+
+    function openSpecificForm(formKey) {
+      if (!FORM_DEFINITIONS[formKey]) return;
+      openFormModal();
+      selectForm(formKey);
+    }
+
+    function openFormModal() {
+      const overlay = document.getElementById("ffOverlay");
+      overlay.classList.add("open");
+      renderFormGrid();
+      showStage(1);
+      document.getElementById("ffModalTitle").textContent = "Select a Legal Form";
+    }
+
+    function closeFormModal() {
+      document.getElementById("ffOverlay").classList.remove("open");
+    }
+
+    function handleOverlayClick(e) {
+      if (e.target === document.getElementById("ffOverlay")) closeFormModal();
+    }
+
+    function showStage(n) {
+      [1, 2, 3].forEach(i => {
+        document.getElementById(`ffStage${i}`).classList.toggle("active", i === n);
+      });
+    }
+
+    function goToStage1() {
+      document.getElementById("ffModalTitle").textContent = "Select a Legal Form";
+      showStage(1);
+    }
+
+    function goToStage2() {
+      if (ffSelectedFormKey) selectForm(ffSelectedFormKey);
+    }
+
+    function startNewForm() {
+      goToStage1();
+    }
+
+    function renderFormGrid() {
+      const grid = document.getElementById("ffFormGrid");
+      grid.innerHTML = "";
+      Object.entries(FORM_DEFINITIONS).forEach(([key, def]) => {
+        const card = document.createElement("div");
+        card.className = "ff-card";
+        card.innerHTML = `
+          <div class="ff-card-icon">${def.icon}</div>
+          <div class="ff-card-title">${key}</div>
+          <div class="ff-card-desc">${def.desc}</div>
+        `;
+        card.onclick = () => selectForm(key);
+        grid.appendChild(card);
+      });
+    }
+
+    function selectForm(key) {
+      ffSelectedFormKey = key;
+      const def = FORM_DEFINITIONS[key];
+      document.getElementById("ffModalTitle").textContent = key;
+      document.getElementById("ffInputTitle").textContent = `${def.icon} ${key}`;
+      document.getElementById("ffInputDesc").textContent = def.desc;
+      document.getElementById("ffFormError").textContent = "";
+
+      const container = document.getElementById("ffFieldsContainer");
+      container.innerHTML = "";
+      def.fields.forEach(field => {
+        const wrapper = document.createElement("div");
+        wrapper.className = "ff-field";
+        const label = document.createElement("label");
+        label.htmlFor = `ff_${field.id}`;
+        label.textContent = field.label + (field.required ? " *" : "");
+
+        let input;
+        if (field.type === "textarea") {
+          input = document.createElement("textarea");
+          input.rows = 3;
+        } else {
+          input = document.createElement("input");
+          input.type = "text";
+        }
+        input.id = `ff_${field.id}`;
+        input.name = field.id;
+        input.placeholder = field.label;
+        if (field.required) input.required = true;
+
+        wrapper.appendChild(label);
+        wrapper.appendChild(input);
+        container.appendChild(wrapper);
+      });
+
+      const submitBtn = document.getElementById("ffSubmitBtn");
+      submitBtn.textContent = "✨ Generate Form";
+      submitBtn.disabled = false;
+      showStage(2);
+    }
+
+    async function submitFormFilling() {
+      const key = ffSelectedFormKey;
+      if (!key) return;
+      const def = FORM_DEFINITIONS[key];
+
+      // Collect & validate fields
+      const fields = {};
+      let missingRequired = [];
+      def.fields.forEach(field => {
+        const el = document.getElementById(`ff_${field.id}`);
+        const val = el ? el.value.trim() : "";
+        if (field.required && !val) missingRequired.push(field.label);
+        if (val) fields[field.label] = val;
+      });
+
+      const errorEl = document.getElementById("ffFormError");
+      if (missingRequired.length > 0) {
+        errorEl.textContent = `Please fill in: ${missingRequired.join(", ")}`;
+        return;
+      }
+      errorEl.textContent = "";
+
+      const submitBtn = document.getElementById("ffSubmitBtn");
+      submitBtn.disabled = true;
+      submitBtn.textContent = "⏳ Generating... (may take 60–90 sec)";
+
+      try {
+        const response = await fetchWithFallback(
+          ["/generate-form", "/api/generate-form"],
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ form_type: key, fields })
+          }
+        );
+
+        if (!response.ok) {
+          const msg = await extractErrorMessage(response);
+          throw new Error(msg);
+        }
+
+        const data = await response.json();
+        ffLastGeneratedText = data.document || "";
+        ffLastFormTitle = key;
+
+        document.getElementById("ffOutputBox").textContent = ffLastGeneratedText;
+        document.getElementById("ffOutputDisclaimer").textContent = data.disclaimer || "";
+        document.getElementById("ffModalTitle").textContent = `Generated: ${key}`;
+        showStage(3);
+      } catch (err) {
+        errorEl.textContent = "Error: " + (err && err.message ? err.message : "Form generation failed. Please try again.");
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "✨ Generate Form";
+      }
+    }
+
+    async function copyFormOutput() {
+      if (!ffLastGeneratedText) return;
+      try {
+        await navigator.clipboard.writeText(ffLastGeneratedText);
+        const btn = document.querySelector(".ff-output-btn.primary");
+        const orig = btn.textContent;
+        btn.textContent = "✅ Copied!";
+        setTimeout(() => { btn.textContent = orig; }, 2000);
+      } catch (_) { }
+    }
+
+    async function exportFormOutput(format) {
+      if (!ffLastGeneratedText) return;
+
+      // Build filename from known form title + format
+      const safeTitle = (ffLastFormTitle || "legal-form")
+        .toLowerCase()
+        .replace(/\s+/g, "-")
+        .replace(/[^a-z0-9-]/g, "")
+        .replace(/-+/g, "-")
+        .replace(/^-|-$/g, "") || "legal-form";
+      const filename = `${safeTitle}.${format}`;
+
+      // Show a loading state on the button
+      const exportBtns = document.querySelectorAll(".ff-output-btn");
+      exportBtns.forEach(b => { b.disabled = true; });
+
+      try {
+        const response = await fetchWithFallback(
+          ["/reports/export", "/api/reports/export"],
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              title: ffLastFormTitle || "SaulGPT Legal Form",
+              content: ffLastGeneratedText,
+              format
+            })
+          }
+        );
+
+        if (!response.ok) {
+          const errText = await response.text().catch(() => "Unknown error");
+          throw new Error(errText.slice(0, 200) || `Export failed (${response.status})`);
+        }
+
+        const arrayBuffer = await response.arrayBuffer();
+        const mimeType = format === "pdf"
+          ? "application/pdf"
+          : "application/vnd.openxmlformats-officedocument.wordprocessingml.document";
+
+        const blob = new Blob([arrayBuffer], { type: mimeType });
+
+        // Use FileReader to produce a same-origin data URL.
+        // This is the only approach Chrome guarantees will respect `a.download`.
+        const reader = new FileReader();
+        reader.onloadend = function () {
+          const dataUrl = reader.result;
+          const a = document.createElement("a");
+          a.style.display = "none";
+          a.href = dataUrl;
+          a.download = filename;
+          document.body.appendChild(a);
+          a.click();
+          setTimeout(() => document.body.removeChild(a), 500);
+        };
+        reader.onerror = function () {
+          throw new Error("Failed to read the exported file.");
+        };
+        reader.readAsDataURL(blob);
+
+      } catch (err) {
+        alert("Export error: " + (err && err.message ? err.message : "Please try again."));
+      } finally {
+        exportBtns.forEach(b => { b.disabled = false; });
+      }
+    }
+
   </script>
 </body>
+
 </html>
