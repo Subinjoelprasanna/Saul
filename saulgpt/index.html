@@ -646,7 +646,7 @@
 
     function friendlyFailureMessage(rawMessage) {
       const lower = String(rawMessage || "").toLowerCase();
-      if (lower.includes("failed to fetch") || lower.includes("networkerror") || lower.includes("network error")) {
+      if (lower.includes("failed to fetch") || lower.includes("networkerror") || lower.includes("network error") || lower.includes("load failed")) {
         return "I could not connect to the backend service right now. Please make sure the FastAPI server is running, then try again.";
       }
       if (rawMessage && String(rawMessage).trim()) {

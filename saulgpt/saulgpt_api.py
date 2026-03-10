@@ -27,10 +27,11 @@ ALLOWED_ORIGINS = [
     ).split(",")
     if origin.strip()
 ]
+ALLOW_ALL_ORIGINS = os.getenv("ALLOW_ALL_ORIGINS", "1") == "1"
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=ALLOWED_ORIGINS,
+    allow_origins=["*"] if ALLOW_ALL_ORIGINS else ALLOWED_ORIGINS,
     allow_credentials=False,
     allow_methods=["POST", "GET", "OPTIONS"],
     allow_headers=["Content-Type", "X-API-Key"],
